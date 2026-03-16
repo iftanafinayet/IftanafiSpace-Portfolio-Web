@@ -39,80 +39,80 @@ export function Projects() {
     {
       title: 'Expense Tracker',
       description: 'Content management system for portfolio websites with drag-and-drop builder, customizable themes, and SEO optimization tools.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+      tech: ['React', 'Node.js', 'Supabase', 'Express'],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
       github: 'https://github.com/iftanafinayet/mern-expense-tracker-app',
-      live: '#',
+      live: 'https://dompetgua.netlify.app/',
     },
   ];
 
   return (
     <section id="projects" className="py-20 px-6">
       <ScrollReveal>
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-white mx-auto rounded-full"></div>
-          <p className="text-white/70 mt-4 text-lg">
-            Some of my recent work
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Featured Projects
+            </h2>
+            <div className="w-20 h-1 bg-white mx-auto rounded-full"></div>
+            <p className="text-white/70 mt-4 text-lg">
+              Some of my recent work
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="backdrop-blur-xl bg-white/5 rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:bg-white/10 transition-all duration-300 hover:scale-105 group"
-            >
-              <div className="h-48 relative overflow-hidden">
-                <ImageWithFallback
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-              </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="backdrop-blur-xl bg-white/5 rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:bg-white/10 transition-all duration-300 hover:scale-105 group"
+              >
+                <div className="h-48 relative overflow-hidden">
+                  <ImageWithFallback
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-white/70 mb-4 text-sm leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-white/70 mb-4 text-sm leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-xs"
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex gap-3">
+                    <a
+                      href={project.github}
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
                     >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span className="text-sm">Code</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white text-slate-900 hover:bg-white/90 transition-all duration-300"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Live</span>
-                  </a>
+                      <Github className="w-4 h-4" />
+                      <span className="text-sm">Code</span>
+                    </a>
+                    <a
+                      href={project.live}
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-white text-slate-900 hover:bg-white/90 transition-all duration-300"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Live</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
       </ScrollReveal>
     </section>
   );
