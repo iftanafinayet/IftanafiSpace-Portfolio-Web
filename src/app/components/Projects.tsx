@@ -2,13 +2,16 @@ import { ExternalLink, Figma, FigmaIcon, Github } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ScrollReveal } from './ScrollReveal';
 
+import ukmImg from '../../assets/UKMKemasan.png';
+import tegalEatsImg from '../../assets/TegalEats.png';
+
 export function Projects() {
   const projects = [
     {
       title: 'UKM Kemasan ERP and POS',
       description: 'A full-featured ERP and POS system for small and medium enterprises. Built with React, Node.js, and MongoDB.',
       tech: ['React', 'Node.js', 'MongoDB', 'Chart.js', 'Tailwind CSS', 'Express'],
-      image: '../../assets/images/ukm-kemasan.png',
+      image: ukmImg,
       github: 'https://github.com/iftanafinayet/ukmkemasan-erp-frontend',
       live: 'https://ukmkemasan-erp-frontend.vercel.app/portal',
     },
@@ -32,7 +35,7 @@ export function Projects() {
       title: 'Tegal Eats',
       description: 'A Platform for finding the best restaurants in Tegal, Indonesia.',
       tech: ['React', 'Tailwind CSS', 'Supabase', 'Vercel'],
-      image: '../../assets/images/tegal-eats.png',
+      image: tegalEatsImg,
       github: 'https://github.com/iftanafinayet/tegal-eats',
       live: 'https://tegal-eats.vercel.app/',
     },
