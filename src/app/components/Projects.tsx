@@ -5,12 +5,12 @@ import { ScrollReveal } from './ScrollReveal';
 export function Projects() {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-featured e-commerce platform with product management, shopping cart, payment integration, and order tracking. Built with React, Node.js, and MongoDB.',
+      title: 'UKM Kemasan ERP and POS',
+      description: 'A full-featured ERP and POS system for small and medium enterprises. Built with React, Node.js, and MongoDB.',
       tech: ['React', 'Node.js', 'MongoDB', 'Chart.js', 'Tailwind CSS', 'Express'],
-      image: 'https://images.unsplash.com/photo-1687524690542-2659f268cde8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MTQ3ODc3OHww&ixlib=rb-4.1.0&q=80&w=1080',
-      github: 'https://github.com/iftanafinayet/ecommerce-app',
-      live: '#',
+      image: '../../assets/images/ukm-kemasan.png',
+      github: 'https://github.com/iftanafinayet/ukmkemasan-erp-frontend',
+      live: 'https://ukmkemasan-erp-frontend.vercel.app/portal',
     },
     {
       title: 'UI/UX Design Marketplace',
@@ -26,15 +26,15 @@ export function Projects() {
       tech: ['React', 'OpenWeather API', 'MongoDB', 'Express', 'Node.js'],
       image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
       github: 'https://github.com/iftanafinayet/mern-weather-glass-app',
-      live: '#',
+      live: 'https://isweatherapp.netlify.app/',
     },
     {
-      title: 'Lauk Restauran',
-      description: 'Discover and save your favorite recipes with advanced search filters, meal planning features, and nutrition information integration.',
-      tech: ['PHP', 'MySQL', 'PhpMyAdmin'],
-      image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
-      github: 'https://github.com/iftanafinayet/lauk_restoran',
-      live: '#',
+      title: 'Tegal Eats',
+      description: 'A Platform for finding the best restaurants in Tegal, Indonesia.',
+      tech: ['React', 'Tailwind CSS', 'Supabase', 'Vercel'],
+      image: '../../assets/images/tegal-eats.png',
+      github: 'https://github.com/iftanafinayet/tegal-eats',
+      live: 'https://tegal-eats.vercel.app/',
     },
     {
       title: 'Expense Tracker',

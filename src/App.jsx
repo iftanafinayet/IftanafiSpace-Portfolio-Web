@@ -6,12 +6,11 @@ import { TechStack } from './app/components/TechStack';
 import { Projects } from './app/components/Projects';
 import { Footer } from './app/components/Footer';
 import { Experience } from './app/components/Experience';
-import Beams from './app/components/Beams';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
   const [loading, setLoading] = React.useState(true);
-  
+
   React.useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
@@ -40,18 +39,12 @@ export default function App() {
 
       {/* 3. Bungkus Konten Utama agar muncul dengan halus (Fade In) */}
       {!loading && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="relative min-h-screen w-full bg-black text-white"
         >
-          {/* BACKGROUND LAYER */}
-          <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-            <Beams />
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
-          </div>
-
           {/* CONTENT LAYER */}
           <div className="relative z-10 w-full">
             <Navbar />
