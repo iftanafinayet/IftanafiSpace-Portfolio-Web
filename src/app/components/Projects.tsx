@@ -1,9 +1,10 @@
 import { ExternalLink, Figma, FigmaIcon, Github } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ScrollReveal } from './ScrollReveal';
-
 import ukmImg from '../../assets/UKMKemasan.png';
 import tegalEatsImg from '../../assets/TegalEats.png';
+import expenseTrackerImg from '../../assets/ExpenseTracker.png';
+
 
 export function Projects() {
   const projects = [
@@ -43,7 +44,7 @@ export function Projects() {
       title: 'Expense Tracker',
       description: 'Content management system for portfolio websites with drag-and-drop builder, customizable themes, and SEO optimization tools.',
       tech: ['React', 'Node.js', 'Supabase', 'Express'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+      image: expenseTrackerImg,
       github: 'https://github.com/iftanafinayet/mern-expense-tracker-app',
       live: 'https://dompetgua.netlify.app/',
     },
