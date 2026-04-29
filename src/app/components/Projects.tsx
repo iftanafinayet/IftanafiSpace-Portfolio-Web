@@ -5,7 +5,7 @@ export function Projects() {
       category: 'ERP & POS System • 2024',
       description: 'A comprehensive ERP and POS system streamlining operations for SMEs with real-time inventory tracking and sales analytics.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Redux'],
-       image: '/assets/UKMKemasan.png',
+      image: '/assets/UKMKemasan.png',
       live: 'https://ukmkemasan-erp-frontend.vercel.app/portal',
       large: true
     },
@@ -23,7 +23,7 @@ export function Projects() {
       category: 'Branding • 2024',
       description: 'A platform connecting foodies with the best local culinary spots in Tegal, featuring integrated maps and reviews.',
       tech: ['React', 'Firebase', 'Google Maps API'],
-       image: '/assets/TegalEats.png',
+      image: '/assets/TegalEats.png',
       live: 'https://tegal-eats.vercel.app/',
       large: false
     },
@@ -32,10 +32,19 @@ export function Projects() {
       category: 'Fintech • 2024',
       description: 'Personal finance manager with intuitive expense tracking, budgeting tools, and financial health summaries.',
       tech: ['React', 'Framer Motion', 'Zustand', 'Glassmorphism'],
-       image: '/assets/DompetGua.png',
+      image: '/assets/DompetGua.png',
       live: 'https://dompetgua.netlify.app/',
       large: true
     },
+    {
+      title: 'SMART GROCERIE',
+      category: 'Market Analysis • 2025',
+      description: 'A comprehensive market analysis platform for SMEs with real-time inventory tracking and sales analytics.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
+      image: '/assets/SmartGrocerie.png',
+      live: 'https://smartgrocerie.vercel.app/',
+      large: false
+    }
   ];
 
   return (
