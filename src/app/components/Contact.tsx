@@ -1,149 +1,194 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
-import { useState } from 'react';
-import { ScrollReveal } from './ScrollReveal';
+import { useState, useEffect } from 'react';
 
 export function Contact() {
+  const [time, setTime] = useState(new Date());
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: '',
+    projectTheme: 'Product Design',
+    details: ''
   });
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const projectThemes = ['Product Design', 'Development', 'Branding', 'Strategy', 'Other'];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    const subject = encodeURIComponent(`Project Inquiry: ${formData.projectTheme} - ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Project Theme: ${formData.projectTheme}\n\n` +
+      `Details:\n${formData.details}`
+    );
+    window.location.href = `mailto:iftanafinayet18@gmail.com?subject=${subject}&body=${body}`;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
-    <section id="contact" className="py-20 px-6">
-      <ScrollReveal>
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-          Get In <span className="bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Touch</span>
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-8 border border-white/20 shadow-xl hover:bg-white/15 transition-all duration-300">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white/70 text-sm mb-1">Email</p>
-                    <p className="text-white font-semibold">iftanafinayet18@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white/70 text-sm mb-1">Phone</p>
-                    <p className="text-white font-semibold">+62 819 1078 8601</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white/70 text-sm mb-1">Location</p>
-                    <p className="text-white font-semibold">Jakarta, Indonesia</p>
-                  </div>
-                </div>
+    <main id="contact" className="pt-20 pb-20 px-6 max-w-[1440px] mx-auto">
+      {/* Hero Section */}
+      <section className="mb-section-gap grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <div className="lg:col-span-7">
+          <span className="inline-block bg-primary/20 text-primary px-4 py-1 rounded-full text-label-sm border border-primary/30 mb-6 uppercase tracking-widest">AVAILABLE FOR FREELANCE</span>
+          <h1 className="font-headline-xl text-white mb-8 text-[clamp(48px,8vw,80px)] leading-[1.1] font-bold tracking-tighter">
+            Let's build something <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-primary italic">extraordinary</span> together.
+          </h1>
+          <p className="font-body-lg text-on-surface-variant max-w-xl mb-12">
+            Have a vision that needs precision engineering and premium aesthetics? Reach out and let's discuss how we can elevate your digital presence.
+          </p>
+          {/* Contact Details Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+            <div className="glass-card p-gutter rounded-xl group hover:border-primary/50 transition-all duration-500">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="material-symbols-outlined text-primary">alternate_email</span>
+                <span className="font-label-md text-on-surface">Email Me</span>
               </div>
+              <p className="text-on-surface-variant group-hover:text-white transition-colors font-body-md">iftanafinayet18@gmail.com</p>
+            </div>
+            <div className="glass-card p-gutter rounded-xl group hover:border-primary/50 transition-all duration-500">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="material-symbols-outlined text-primary">schedule</span>
+                <span className="font-label-md text-on-surface">Current Time</span>
+              </div>
+              <p className="text-on-surface-variant group-hover:text-white transition-colors font-body-md">
+                Jakarta, ID • {time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })} WIB
+              </p>
             </div>
           </div>
+        </div>
 
-          {/* Contact Form */}
-          <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-8 border border-white/20 shadow-xl">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-white/80 mb-2">
-                  Name
-                </label>
+        {/* Office Location Card */}
+        <div className="lg:col-span-5 group relative overflow-hidden rounded-2xl glass-card h-[400px] lg:h-auto border-white/10 hover:border-primary/50 transition-all duration-700">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqQrL3_UaeSnXQiCz_6xj1lo54ernnsAAgyblNH2ENHrtQEwY5TSfkRitdfyv9pwjTYqHtiZcaPiHhfMistvHx0OC_WZWOcgkQCP1aPv8OYJ-9b0Wmyt7xq9zoEykqIpKrp9rwFym_h8O9k45WBmY-rG55PJpJ0VRpObEJLTnbExSofy7hWK05ocT6CYMZIZ9uhmhxWpHXwDBUK8CJSG-gQ0Sqk0SqN6HNNS_z3sruox4rNxEjfs-02QYHeZ40to2BOeGegqCJihDW"
+            alt="Jakarta Cityscape"
+            className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+
+          <div className="absolute bottom-8 left-8 z-20">
+            <p className="font-label-md text-white/40 uppercase tracking-widest mb-1">Office Location</p>
+            <h3 className="font-headline-md text-white">Jakarta, Indonesia</h3>
+          </div>
+        </div>
+      </section>
+
+      {/* Bento Grid Contact Form */}
+      <section className="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+        {/* Left Panel: Social Connections */}
+        <div className="lg:col-span-1 space-y-gutter">
+          <div className="glass-card p-8 rounded-xl h-full flex flex-col justify-between">
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">Social Pulse</h3>
+              <div className="space-y-4">
+                <a href="https://www.instagram.com/iftanafiiinayet" className="flex items-center justify-between group p-4 rounded-lg bg-white/5 border border-white/5 hover:border-primary/50 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">Camera</span>
+                    <span className="font-body-md text-on-surface">Instagram</span>
+                  </div>
+                  <span className="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-all">arrow_outward</span>
+                </a>
+                <a href="https://github.com/iftanafinayet" className="flex items-center justify-between group p-4 rounded-lg bg-white/5 border border-white/5 hover:border-primary/50 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">terminal</span>
+                    <span className="font-body-md text-on-surface">GitHub</span>
+                  </div>
+                  <span className="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-all">arrow_outward</span>
+                </a>
+                <a href="https://www.linkedin.com/in/nayet-iftanafi" className="flex items-center justify-between group p-4 rounded-lg bg-white/5 border border-white/5 hover:border-primary/50 transition-all duration-300">
+                  <div className="flex items-center gap-4">
+                    <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">work</span>
+                    <span className="font-body-md text-on-surface">LinkedIn</span>
+                  </div>
+                  <span className="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-all">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-white/10">
+              <p className="font-label-sm text-white/40 mb-2 uppercase tracking-widest">Last Update</p>
+              <p className="font-body-md text-on-surface">New work posted recently.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Panel: Main Form */}
+        <div className="lg:col-span-2">
+          <div className="glass-card p-8 md:p-12 rounded-xl">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">Send an Inquiry</h3>
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="font-label-md text-on-surface-variant px-1">Full Name</label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   value={formData.name}
-                  onChange={handleChange}
+                  onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-purple-400 transition-all duration-300"
-                  placeholder="Your name"
+                  placeholder="John Doe"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-on-surface focus:border-primary focus:ring-0 transition-all placeholder:opacity-40"
                 />
               </div>
-
-              <div>
-                <label htmlFor="email" className="block text-white/80 mb-2">
-                  Email
-                </label>
+              <div className="space-y-2">
+                <label className="font-label-md text-on-surface-variant px-1">Email Address</label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-purple-400 transition-all duration-300"
-                  placeholder="your.email@example.com"
+                  placeholder="john@example.com"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-on-surface focus:border-primary focus:ring-0 transition-all placeholder:opacity-40"
                 />
               </div>
-
-              <div>
-                <label htmlFor="message" className="block text-white/80 mb-2">
-                  Message
-                </label>
+              <div className="md:col-span-2 space-y-2">
+                <label className="font-label-md text-on-surface-variant px-1">Project Theme</label>
+                <div className="flex flex-wrap gap-4 pt-2">
+                  {projectThemes.map((theme) => (
+                    <button
+                      key={theme}
+                      type="button"
+                      onClick={() => setFormData(prev => ({ ...prev, projectTheme: theme }))}
+                      className={`px-6 py-2 rounded-full border transition-all font-label-sm ${formData.projectTheme === theme
+                        ? 'border-primary bg-primary/20 text-primary'
+                        : 'border-white/10 hover:border-primary/50 text-on-surface-variant'
+                        }`}
+                    >
+                      {theme}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="md:col-span-2 space-y-2">
+                <label className="font-label-md text-on-surface-variant px-1">Project Details</label>
                 <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
+                  name="details"
+                  value={formData.details}
+                  onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-purple-400 transition-all duration-300 resize-none"
-                  placeholder="Your message..."
-                />
+                  placeholder="Describe your vision..."
+                  className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-on-surface focus:border-primary focus:ring-0 transition-all placeholder:opacity-40 resize-none"
+                ></textarea>
               </div>
-
-              <button
-                type="submit"
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all duration-300 hover:scale-105"
-              >
-                Send Message
-              </button>
+              <div className="md:col-span-2 pt-4">
+                <button type="submit" className="w-full md:w-auto bg-primary text-on-primary px-12 py-4 rounded-xl font-label-md hover:bg-primary-container transition-all shadow-[0_4px_20px_rgba(208,188,255,0.3)] active:scale-95 duration-200">
+                  Initiate Project Discovery
+                </button>
+              </div>
             </form>
           </div>
         </div>
-
-        {/* Footer */}
-        <div className="mt-16 text-center">
-          <div className="backdrop-blur-xl bg-white/10 rounded-3xl p-6 border border-white/20 shadow-xl inline-block">
-            <p className="text-white/70">
-              © 2026 Developer Portfolio. Made with ❤️ using React & Tailwind CSS
-            </p>
-          </div>
-        </div>
-      </div>
-      </ScrollReveal>
-    </section>
+      </section>
+    </main>
   );
 }
