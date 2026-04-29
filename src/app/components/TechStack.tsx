@@ -4,7 +4,7 @@ export function TechStack() {
   const categories = [
     {
       label: 'Frontend',
-      skills: ['React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'PHP']
+      skills: ['React', 'JavaScript', 'Tailwind CSS', 'JavaScript', 'Flutter']
     },
     {
       label: 'Backend',
@@ -29,7 +29,7 @@ export function TechStack() {
               <span className="font-label-sm text-primary tracking-[0.3em] uppercase">The Toolkit</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-              Tech Stack & <br/>
+              Tech Stack & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Ecosystem</span>
             </h2>
           </div>
@@ -43,10 +43,10 @@ export function TechStack() {
       <div className="relative flex flex-col gap-8">
         {/* Row 1: Moving Right */}
         <div className="flex overflow-hidden select-none">
-          <motion.div 
+          <motion.div
             className="flex flex-nowrap gap-6 min-w-full"
             animate={{ x: [0, -1000] }}
-            transition={{ 
+            transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
@@ -56,8 +56,8 @@ export function TechStack() {
             }}
           >
             {[...allSkills, ...allSkills, ...allSkills].map((skill, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-white/5 flex items-center gap-3 group hover:border-primary/30 transition-colors"
               >
                 <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
@@ -69,10 +69,10 @@ export function TechStack() {
 
         {/* Row 2: Moving Left */}
         <div className="flex overflow-hidden select-none">
-          <motion.div 
+          <motion.div
             className="flex flex-nowrap gap-6 min-w-full"
             animate={{ x: [-1000, 0] }}
-            transition={{ 
+            transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
@@ -82,8 +82,8 @@ export function TechStack() {
             }}
           >
             {[...allSkills, ...allSkills, ...allSkills].reverse().map((skill, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-white/5 flex items-center gap-3 group hover:border-primary/30 transition-colors"
               >
                 <span className="w-2 h-2 rounded-full bg-secondary/40 group-hover:bg-secondary transition-colors"></span>

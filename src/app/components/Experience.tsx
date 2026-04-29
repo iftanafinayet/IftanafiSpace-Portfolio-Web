@@ -44,7 +44,7 @@ export const Experience = () => {
       title: 'Sales and Marketing',
       company: 'UKM Kemasan',
       location: 'Jakarta, Indonesia',
-      description: 'Responsible for managing the sales and marketing of UKM Kemasan, a company that produces packaging for UMKM accros Coffee Industy',
+      description: 'Responsible for managing the sales and marketing of UKM Kemasan, a company that produces packaging for UMKM accros Coffee Industry',
       achievements: [
         'Upscale the sales accros Coffee industry in Indonesia',
         'Build a strong relationship with coffee roasters and cafes',

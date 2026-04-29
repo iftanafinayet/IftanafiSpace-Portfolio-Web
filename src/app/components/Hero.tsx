@@ -8,7 +8,7 @@ export function Hero() {
           <span className="w-2 h-2 rounded-full bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.8)]"></span>
           <span className="font-label-sm text-on-surface-variant uppercase tracking-widest">Available for select projects</span>
         </div>
-        <h1 className="font-headline-xl text-white text-[clamp(48px,10vw,96px)] leading-[0.95] tracking-tighter mb-10">
+        <h1 className="font-headline-xl text-white text-[clamp(48px,10vw,96px)] leading-[0.95] text-bold tracking-tighter mb-10">
           Nayet Iftanafi<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-primary-container">FULL STACK DEVELOPER</span>
         </h1>
