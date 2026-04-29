@@ -1,4 +1,4 @@
-import profileImage from '../../../public/fotoprofile.jpeg';
+import profileImage from '../../assets/fotoprofile.jpeg';
 
 export function About() {
   return (

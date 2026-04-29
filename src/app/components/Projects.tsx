@@ -58,36 +58,36 @@ export function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         {projects.map((project, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`group flex flex-col ${project.large ? 'md:col-span-8' : 'md:col-span-4'}`}
           >
             <div className="glass-card rounded-2xl overflow-hidden flex flex-col h-full border-white/5 hover:border-primary/20 transition-all duration-300">
               <div className={`relative overflow-hidden ${project.large ? 'aspect-[21/9]' : 'aspect-video'}`}>
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" 
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
-              
+
               <div className="p-6 md:p-8 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <span className="text-[10px] font-bold tracking-widest text-primary/80 uppercase mb-1 block">{project.category}</span>
                     <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">{project.title}</h3>
                   </div>
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 rounded-full glass-card hover:bg-primary hover:text-on-primary transition-colors"
                   >
                     <span className="material-symbols-outlined text-xl">north_east</span>
                   </a>
                 </div>
-                
+
                 <p className="font-body-md text-on-surface-variant/80 text-sm mb-6 line-clamp-2">
                   {project.description}
                 </p>
