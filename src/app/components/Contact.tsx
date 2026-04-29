@@ -36,7 +36,7 @@ export function Contact() {
   return (
     <main id="contact" className="pt-20 pb-20 px-6 max-w-[1440px] mx-auto">
       {/* Hero Section */}
-      <section className="mb-section-gap grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
         <div className="lg:col-span-7">
           <span className="inline-block bg-primary/20 text-primary px-4 py-1 rounded-full text-label-sm border border-primary/30 mb-6 uppercase tracking-widest">AVAILABLE FOR FREELANCE</span>
           <h1 className="font-headline-xl text-white mb-8 text-[clamp(48px,8vw,80px)] leading-[1.1] font-bold tracking-tighter">
@@ -68,11 +68,11 @@ export function Contact() {
         </div>
 
         {/* Office Location Card */}
-        <div className="lg:col-span-5 group relative overflow-hidden rounded-2xl glass-card h-[400px] lg:h-auto border-white/10 hover:border-primary/50 transition-all duration-700">
+        <div className="lg:col-span-5 group relative overflow-hidden rounded-2xl glass-card h-[72%] lg:h-72% border-white/10 hover:border-primary/50 transition-all duration-700">
           <img
             src="/assets/Office.JPG"
             alt="Jakarta Cityscape"
-            className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
+            className="w-full h-[100%] object-cover opacity-100 group-hover:opacity-100 transition-opacity duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
 
@@ -84,7 +84,7 @@ export function Contact() {
       </section>
 
       {/* Bento Grid Contact Form */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+      <section className="-mt-24 grid grid-cols-1 lg:grid-cols-3 gap-gutter">
         {/* Left Panel: Social Connections */}
         <div className="lg:col-span-1 space-y-gutter">
           <div className="glass-card p-8 rounded-xl h-full flex flex-col justify-between">

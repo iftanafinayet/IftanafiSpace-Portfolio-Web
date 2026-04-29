@@ -41,7 +41,7 @@ export function Projects() {
       category: 'Market Analysis • 2025',
       description: 'A comprehensive market analysis platform for SMEs with real-time inventory tracking and sales analytics.',
       tech: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
-       image: '/assets/SmartGroceries.png',
+      image: '/assets/SmartGroceries.png',
       live: 'https://smart-groceries-dashboard.vercel.app/',
       large: false
     }
@@ -118,12 +118,12 @@ export function Projects() {
             <p className="text-on-surface-variant/70">I'm always looking for new challenges and interesting projects to work on.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-primary text-on-primary px-8 py-3.5 rounded-xl font-semibold hover:opacity-90 transition-all">
+            < a href="#contact" className="bg-primary text-on-primary px-8 py-3.5 rounded-xl font-semibold hover:opacity-90 transition-all">
               LET'S TALK
-            </button>
-            <button className="glass-card px-8 py-3.5 rounded-xl font-semibold text-white border-white/10 hover:bg-white/5 transition-all">
+            </a>
+            < a href="/assets/NayetIftanafi_Resume.pdf" className="glass-card px-8 py-3.5 rounded-xl font-semibold text-white border-white/10 hover:bg-white/5 transition-all">
               VIEW RESUME
-            </button>
+            </a>
           </div>
         </div>
       </section>
