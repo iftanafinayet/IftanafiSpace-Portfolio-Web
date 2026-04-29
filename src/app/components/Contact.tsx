@@ -70,7 +70,7 @@ export function Contact() {
         {/* Office Location Card */}
         <div className="lg:col-span-5 group relative overflow-hidden rounded-2xl glass-card h-[400px] lg:h-auto border-white/10 hover:border-primary/50 transition-all duration-700">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqQrL3_UaeSnXQiCz_6xj1lo54ernnsAAgyblNH2ENHrtQEwY5TSfkRitdfyv9pwjTYqHtiZcaPiHhfMistvHx0OC_WZWOcgkQCP1aPv8OYJ-9b0Wmyt7xq9zoEykqIpKrp9rwFym_h8O9k45WBmY-rG55PJpJ0VRpObEJLTnbExSofy7hWK05ocT6CYMZIZ9uhmhxWpHXwDBUK8CJSG-gQ0Sqk0SqN6HNNS_z3sruox4rNxEjfs-02QYHeZ40to2BOeGegqCJihDW"
+            src="/assets/Office.JPG"
             alt="Jakarta Cityscape"
             className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
           />
