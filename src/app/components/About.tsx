@@ -1,3 +1,5 @@
+import profileImage from '../../../public/fotoprofile.jpeg';
+
 export function About() {
   return (
     <section id="about" className="max-w-[1440px] mx-auto px-8 lg:px-24 py-section-gap">
@@ -18,7 +20,7 @@ export function About() {
         <div className="w-full md:w-[400px] aspect-square rounded-2xl overflow-hidden glass-card p-2 relative group">
           <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/20 to-transparent opacity-50"></div>
           <img 
-            src="/fotoprofile.jpeg" 
+            src={profileImage} 
             alt="Nayet Iftanafi" 
             className="w-full h-full object-cover rounded-xl filter grayscale group-hover:grayscale-0 transition-all duration-700" 
           />

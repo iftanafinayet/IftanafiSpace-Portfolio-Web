@@ -1,3 +1,7 @@
+import ukmImage from '../../assets/UKMKemasan.png';
+import tegalEatsImage from '../../assets/TegalEats.png';
+import dompetGuaImage from '../../assets/DompetGua.png';
+
 export function Projects() {
   const projects = [
     {
@@ -5,7 +9,7 @@ export function Projects() {
       category: 'ERP & POS System • 2024',
       description: 'A comprehensive ERP and POS system streamlining operations for SMEs with real-time inventory tracking and sales analytics.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Redux'],
-      image: '/src/assets/UKMKemasan.png',
+      image: ukmImage,
       live: 'https://ukmkemasan-erp-frontend.vercel.app/portal',
       large: true
     },
@@ -23,7 +27,7 @@ export function Projects() {
       category: 'Branding • 2024',
       description: 'A platform connecting foodies with the best local culinary spots in Tegal, featuring integrated maps and reviews.',
       tech: ['React', 'Firebase', 'Google Maps API'],
-      image: '/src/assets/TegalEats.png',
+      image: tegalEatsImage,
       live: 'https://tegal-eats.vercel.app/',
       large: false
     },
@@ -32,7 +36,7 @@ export function Projects() {
       category: 'Fintech • 2024',
       description: 'Personal finance manager with intuitive expense tracking, budgeting tools, and financial health summaries.',
       tech: ['React', 'Framer Motion', 'Zustand', 'Glassmorphism'],
-      image: '/src/assets/DompetGua.png',
+      image: dompetGuaImage,
       live: 'https://dompetgua.netlify.app/',
       large: true
     },
