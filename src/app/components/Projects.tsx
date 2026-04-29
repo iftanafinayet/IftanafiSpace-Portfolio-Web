@@ -37,12 +37,12 @@ export function Projects() {
       large: true
     },
     {
-      title: 'SMART GROCERIE',
+      title: 'SMART GROCERIES',
       category: 'Market Analysis • 2025',
       description: 'A comprehensive market analysis platform for SMEs with real-time inventory tracking and sales analytics.',
       tech: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
-      image: '/assets/SmartGrocerie.png',
-      live: 'https://smartgrocerie.vercel.app/',
+      image: '/assets/SmartGroceris.png',
+      live: 'https://smart-groceries-dashboard.vercel.app/',
       large: false
     }
   ];
