@@ -1,21 +1,25 @@
+import DarkVeil from './DarkVeil';
+
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-20 overflow-hidden">
       {/* Background Decorative Element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-900/20 blur-[120px] rounded-full -z-10"></div>
-      <div className="max-w-[1200px] w-full text-center space-y-8">
+      <div className="absolute inset-0 -z-10">
+        <DarkVeil />
+      </div>
+      <div className="max-w-[1200px] w-full text-center space-y-2">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 glass-card rounded-full border-white/20">
           <span className="w-2 h-2 rounded-full bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.8)]"></span>
           <span className="font-label-sm text-on-surface-variant uppercase tracking-widest">Available for select projects</span>
         </div>
-        <h1 className="font-headline-xl text-white text-[clamp(48px,10vw,96px)] text-bold tracking-tighter mb-10">
-          <span className="block">Nayet Iftanafi</span>
-          <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-primary-container">FULL STACK DEVELOPER</span>
+<h1 className="font-headline-xl text-white text-[clamp(48px,10vw,96px)] font-bold tracking-tighter mb-2">
+           <span className="block font-bold">Nayet Iftanafi</span>
+          <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-primary-container">FULL STACK DEVELOPER</span>
         </h1>
         <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
           Passionate developer focused on building modern web applications with clean code and beautiful user interfaces. MERN stack enthusiast with a love for learning new technologies and creating impactful projects.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+        <div className="flex flex-col sm:flex-row gap-1 justify-center pt-8">
           <a href="#work" className="px-8 py-4 rounded-xl bg-violet-600 text-white font-label-md hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all">
             View Portfolio
           </a>

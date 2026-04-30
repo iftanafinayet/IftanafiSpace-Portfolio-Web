@@ -7,20 +7,21 @@ import { Footer } from './components/Footer';
 import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import './styles/index.css';
+import Beams from './components/Beams';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-black text-[#e2e2e2]">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Experience />
-          <TechStack />
-          <Projects />
-          <Contact />
-        </main>
-        <Footer />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <TechStack />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
