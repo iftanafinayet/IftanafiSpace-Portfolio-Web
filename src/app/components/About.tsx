@@ -1,3 +1,5 @@
+import fotoProfile from '../../assets/fotoprofile.jpeg';
+
 export function About() {
   return (
     <section id="about" className="max-w-[1440px] mx-auto px-8 lg:px-24 py-section-gap">
@@ -17,10 +19,10 @@ export function About() {
         </div>
         <div className="w-full md:w-[400px] aspect-square rounded-2xl overflow-hidden glass-card p-2 relative group">
           <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/20 to-transparent opacity-50"></div>
-          <img 
-             src="/assets/fotoprofile.jpeg" 
-            alt="Nayet Iftanafi" 
-            className="w-full h-full object-cover rounded-xl filter grayscale group-hover:grayscale-0 transition-all duration-700" 
+          <img
+            src={fotoProfile}
+            alt="Nayet Iftanafi"
+            className="w-full h-full object-cover rounded-xl filter grayscale group-hover:grayscale-0 transition-all duration-700"
           />
         </div>
       </header>
@@ -59,10 +61,10 @@ export function About() {
               <p className="text-on-surface-variant">Deployment is just the beginning. I believe in refining systems through constant testing and real-world feedback loops.</p>
             </div>
             <div className="w-1/3 h-full rounded-xl bg-surface-container relative overflow-hidden">
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_HYMMz9g_OCjGNvG39F9DewGVXV5L7toxtmF27B2pHZHeEUqPMhAodtuIdSaZ7sOcaJlJHtPokFGnQRTu1LVd0jjvfmkTvExH_8W9iIYFFdOIECTnKxl-6_TbBSL3JX8f8FJrtqPrD5GVX2cUmM40II1jVdl3Amayw29vUuskqbsZQ6bJM_zWl640FhocdeO5nITHVHPsP9_75CZt3JLtXxxbCuWruV0zRgFJC2g2n9usHeBkeoYlGtVYYhoTJcQNN96o0pSeM38x" 
-                alt="Circuit board pattern" 
-                className="w-full h-full object-cover opacity-30 group-hover:opacity-60 transition-opacity" 
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_HYMMz9g_OCjGNvG39F9DewGVXV5L7toxtmF27B2pHZHeEUqPMhAodtuIdSaZ7sOcaJlJHtPokFGnQRTu1LVd0jjvfmkTvExH_8W9iIYFFdOIECTnKxl-6_TbBSL3JX8f8FJrtqPrD5GVX2cUmM40II1jVdl3Amayw29vUuskqbsZQ6bJM_zWl640FhocdeO5nITHVHPsP9_75CZt3JLtXxxbCuWruV0zRgFJC2g2n9usHeBkeoYlGtVYYhoTJcQNN96o0pSeM38x"
+                alt="Circuit board pattern"
+                className="w-full h-full object-cover opacity-30 group-hover:opacity-60 transition-opacity"
               />
             </div>
           </div>

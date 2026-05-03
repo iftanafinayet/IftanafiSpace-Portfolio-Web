@@ -1,3 +1,8 @@
+import ukmKemasanImg from '../../assets/UKMKemasan.png';
+import tegalEatsImg from '../../assets/TegalEats.png';
+import dompetGuaImg from '../../assets/DompetGua.png';
+import smartGroceriesImg from '../../assets/SmartGroceries.png';
+
 export function Projects() {
   const projects = [
     {
@@ -5,7 +10,7 @@ export function Projects() {
       category: 'ERP & POS System • 2024',
       description: 'A comprehensive ERP and POS system streamlining operations for SMEs with real-time inventory tracking and sales analytics.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Redux'],
-      image: '/assets/UKMKemasan.png',
+      image: ukmKemasanImg,
       live: 'https://ukmkemasan-erp-frontend.vercel.app/portal',
       large: true
     },
@@ -23,7 +28,7 @@ export function Projects() {
       category: 'Branding • 2024',
       description: 'A platform connecting foodies with the best local culinary spots in Tegal, featuring integrated maps and reviews.',
       tech: ['React', 'Firebase', 'Google Maps API'],
-      image: '/assets/TegalEats.png',
+      image: tegalEatsImg,
       live: 'https://tegal-eats-uvfk.vercel.app',
       large: false
     },
@@ -32,7 +37,7 @@ export function Projects() {
       category: 'Fintech • 2024',
       description: 'Personal finance manager with intuitive expense tracking, budgeting tools, and financial health summaries.',
       tech: ['React', 'Framer Motion', 'Zustand', 'Glassmorphism'],
-      image: '/assets/DompetGua.png',
+      image: dompetGuaImg,
       live: 'https://dompetgua.netlify.app/',
       large: true
     },
@@ -41,7 +46,7 @@ export function Projects() {
       category: 'Market Analysis • 2025',
       description: 'A comprehensive market analysis platform for SMEs with real-time inventory tracking and sales analytics.',
       tech: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
-      image: '/assets/SmartGroceries.png',
+      image: smartGroceriesImg,
       live: 'https://smart-groceries-dashboard.vercel.app/',
       large: false
     }

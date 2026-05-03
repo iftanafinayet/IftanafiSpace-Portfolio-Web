@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import officeImg from '../../assets/Office.jpg';
 
 export function Contact() {
   const [time, setTime] = useState(new Date());
@@ -70,7 +71,7 @@ export function Contact() {
         {/* Office Location Card */}
         <div className="lg:col-span-5 group relative overflow-hidden rounded-2xl glass-card h-[72%] lg:h-72% border-white/10 hover:border-primary/50 transition-all duration-700">
           <img
-            src="/assets/Office.JPG"
+            src={officeImg}
             alt="Jakarta Cityscape"
             className="w-full h-[100%] object-cover opacity-100 group-hover:opacity-100 transition-opacity duration-700"
           />
