@@ -24,7 +24,7 @@ export function Projects() {
       description: 'A platform connecting foodies with the best local culinary spots in Tegal, featuring integrated maps and reviews.',
       tech: ['React', 'Firebase', 'Google Maps API'],
       image: '/assets/TegalEats.png',
-      live: 'https://tegal-eats.vercel.app/',
+      live: 'https://tegal-eats-uvfk.vercel.app',
       large: false
     },
     {
