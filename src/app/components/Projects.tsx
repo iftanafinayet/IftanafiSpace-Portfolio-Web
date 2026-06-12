@@ -2,6 +2,7 @@ import ukmKemasanImg from '../../assets/UKMKemasan.png';
 import tegalEatsImg from '../../assets/TegalEats.png';
 import dompetGuaImg from '../../assets/DompetGua.png';
 import smartGroceriesImg from '../../assets/SmartGroceries.png';
+import rumahBalonTegalImg from '../../assets/rumahbalontgl.web.id_.png';
 
 export function Projects() {
   const projects = [
@@ -48,6 +49,15 @@ export function Projects() {
       tech: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
       image: smartGroceriesImg,
       live: 'https://smart-groceries-dashboard.vercel.app/',
+      large: false
+    },
+    {
+      title: 'RUMAH BALON TEGAL',
+      category: 'Landing Page • 2026',
+      description: 'Landing page for Rumah Balon Tegal, a balloon decoration service in Tegal.',
+      tech: ['React', 'Tailwind CSS'],
+      image: rumahBalonTegalImg,
+      live: 'https://rumahbalontgl.vercel.app/',
       large: false
     }
   ];
