@@ -2,7 +2,7 @@ import ukmKemasanImg from '../../assets/UKMKemasan.png';
 import tegalEatsImg from '../../assets/TegalEats.png';
 import dompetGuaImg from '../../assets/DompetGua.png';
 import smartGroceriesImg from '../../assets/SmartGroceries.png';
-import rumahBalonTegalImg from '../../assets/rumahbalontgl.web.id_.png';
+import rumahBalonTegalImg from '../../assets/RumahBalon.jpg';
 
 export function Projects() {
   const projects = [
