@@ -1,8 +1,8 @@
-import ukmKemasanImg from '../../assets/UKMKemasan.png';
-import tegalEatsImg from '../../assets/TegalEats.png';
-import dompetGuaImg from '../../assets/DompetGua.png';
-import smartGroceriesImg from '../../assets/SmartGroceries.png';
-import rumahBalonTegalImg from '../../assets/RumahBalon.jpg';
+import ukmKemasanImg from '../../assets/UKMKemasan.webp';
+import tegalEatsImg from '../../assets/TegalEats.webp';
+import dompetGuaImg from '../../assets/DompetGua.webp';
+import smartGroceriesImg from '../../assets/SmartGroceries.webp';
+import rumahBalonTegalImg from '../../assets/RumahBalon.webp';
 
 export function Projects() {
   const projects = [

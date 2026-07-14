@@ -1,4 +1,4 @@
-import fotoProfile from '../../assets/fotoprofile.jpeg';
+import fotoProfile from '../../assets/fotoprofile.webp';
 
 export function About() {
   return (

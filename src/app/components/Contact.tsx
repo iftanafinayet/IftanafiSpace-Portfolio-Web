@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import officeImg from '../../assets/Office.jpg';
+import officeImg from '../../assets/Office.webp';
 
 export function Contact() {
   const [time, setTime] = useState(new Date());
