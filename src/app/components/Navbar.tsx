@@ -44,17 +44,17 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-black/10 shadow-[0_4px_24px_0_rgba(0,0,0,0.05)]">
       <div className="flex justify-between items-center h-20 px-8 max-w-[1440px] mx-auto">
-        <a href="#home" className="text-xl font-bold tracking-widest text-white font-headline-md">IftanafiSpace.</a>
+        <a href="#home" className="text-xl font-bold tracking-widest text-black font-headline-md">IftanafiSpace.</a>
         <div className="hidden md:flex items-center gap-10 font-['Space_Grotesk'] font-medium tracking-tight">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={link.href}
-              className={`transition-all duration-300 px-3 py-1 rounded ${activeSection === link.id
-                ? 'text-violet-400 font-bold border-b border-violet-500'
-                : 'text-white/60 hover:text-violet-400 hover:bg-white/5'
+              className={`transition-colors duration-300 px-3 py-1 rounded ${activeSection === link.id
+                ? 'text-black font-bold border-b border-neutral-900'
+                : 'text-black hover:bg-black hover:text-white'
                 }`}
             >
               {link.name}
@@ -64,8 +64,8 @@ export function Navbar() {
         <a
           href="#contact"
           className={`px-6 py-2.5 rounded-full font-label-md active:scale-95 transition-all duration-200 ${activeSection === 'contact'
-            ? 'bg-violet-600 text-white shadow-[0_0_20px_rgba(139,92,246,0.5)]'
-            : 'bg-primary-container text-on-primary-container hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]'
+            ? 'bg-black text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]'
+            : 'bg-black text-white border border-black hover:bg-white hover:text-black'
             }`}
         >
           Get in Touch

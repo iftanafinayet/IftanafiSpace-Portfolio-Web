@@ -20,7 +20,7 @@ export function TechStack() {
   const allSkills = [...categories[0].skills, ...categories[1].skills, ...categories[2].skills];
 
   return (
-    <section className="py-24 overflow-hidden bg-black/50">
+    <section className="py-24 overflow-hidden bg-neutral-100">
       <div className="max-w-[1440px] mx-auto px-8 lg:px-24 mb-16">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
@@ -28,12 +28,12 @@ export function TechStack() {
               <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
               <span className="font-label-sm text-primary tracking-[0.3em] uppercase">The Toolkit</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
               Tech Stack & <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Ecosystem</span>
+              <span className="text-black">Ecosystem</span>
             </h2>
           </div>
-          <p className="text-on-surface-variant/70 max-w-sm font-body-md leading-relaxed">
+          <p className="text-black max-w-sm font-body-md leading-relaxed">
             A comprehensive set of modern technologies and tools I use to build high-performance, scalable digital solutions.
           </p>
         </div>
@@ -58,10 +58,10 @@ export function TechStack() {
             {[...allSkills, ...allSkills, ...allSkills].map((skill, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-white/5 flex items-center gap-3 group hover:border-primary/30 transition-colors"
+                className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-black/5 flex items-center gap-3 group hover:bg-black transition-colors"
               >
-                <span className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors"></span>
-                <span className="text-lg font-medium text-white/70 group-hover:text-white transition-colors uppercase tracking-widest">{skill}</span>
+                <span className="w-2 h-2 rounded-full bg-black/40 group-hover:bg-white transition-colors"></span>
+                <span className="text-lg font-medium text-black group-hover:text-white transition-colors uppercase tracking-widest">{skill}</span>
               </div>
             ))}
           </motion.div>
@@ -84,10 +84,10 @@ export function TechStack() {
             {[...allSkills, ...allSkills, ...allSkills].reverse().map((skill, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-white/5 flex items-center gap-3 group hover:border-primary/30 transition-colors"
+                className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-black/5 flex items-center gap-3 group hover:bg-black transition-colors"
               >
-                <span className="w-2 h-2 rounded-full bg-secondary/40 group-hover:bg-secondary transition-colors"></span>
-                <span className="text-lg font-medium text-white/70 group-hover:text-white transition-colors uppercase tracking-widest">{skill}</span>
+                <span className="w-2 h-2 rounded-full bg-black/40 group-hover:bg-white transition-colors"></span>
+                <span className="text-lg font-medium text-black group-hover:text-white transition-colors uppercase tracking-widest">{skill}</span>
               </div>
             ))}
           </motion.div>
@@ -103,7 +103,7 @@ export function TechStack() {
             </h4>
             <div className="flex flex-col gap-4">
               {cat.skills.map((skill, i) => (
-                <span key={i} className="text-2xl md:text-4xl font-bold text-white/40 hover:text-white transition-all duration-300 cursor-default hover:translate-x-2 inline-block">
+                <span key={i} className="text-2xl md:text-4xl font-bold text-black hover:bg-black hover:text-white px-2 -mx-2 rounded-lg transition-colors duration-300 cursor-default hover:translate-x-2 inline-block">
                   {skill}
                 </span>
               ))}

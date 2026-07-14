@@ -12,7 +12,7 @@ import Beams from './components/Beams';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-[#e2e2e2]">
+    <div className="min-h-screen bg-[#fafafa] text-[#1a1a1a]">
       <Navbar />
       <main>
         <Hero />

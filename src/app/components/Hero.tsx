@@ -8,22 +8,18 @@ export function Hero() {
         <DarkVeil />
       </div>
       <div className="max-w-[1200px] w-full text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 glass-card rounded-full border-white/20">
-          <span className="w-2 h-2 rounded-full bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.8)]"></span>
-          <span className="font-label-sm text-on-surface-variant uppercase tracking-widest">Available for select projects</span>
-        </div>
-<h1 className="font-headline-xl text-white text-[clamp(48px,10vw,96px)] font-bold tracking-tighter mb-2">
-           <span className="block font-bold">Nayet Iftanafi</span>
-          <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-primary-container">FULL STACK DEVELOPER</span>
+        <h1 className="font-headline-xl text-black text-[clamp(48px,10vw,96px)] font-bold tracking-tighter mb-2">
+          <span className="block font-bold">Nayet Iftanafi</span>
+          <span className="block mt-1 text-black">FULL STACK DEVELOPER</span>
         </h1>
-        <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+        <p className="font-body-lg text-black max-w-2xl mx-auto">
           Passionate developer focused on building modern web applications with clean code and beautiful user interfaces. MERN stack enthusiast with a love for learning new technologies and creating impactful projects.
         </p>
         <div className="flex flex-col sm:flex-row gap-1 justify-center pt-8">
-          <a href="#work" className="px-8 py-4 rounded-xl bg-violet-600 text-white font-label-md hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all">
+          <a href="#work" className="px-8 py-4 rounded-xl bg-black text-white border border-black font-label-md hover:bg-white hover:text-black transition-colors duration-200">
             View Portfolio
           </a>
-          <a href="#process" className="px-8 py-4 rounded-xl glass-card border-violet-500/30 text-white font-label-md hover:bg-white/5 transition-all">
+          <a href="#process" className="px-8 py-4 rounded-xl glass-card border-black/20 text-black font-label-md hover:bg-black hover:text-white transition-colors duration-200">
             Our Process
           </a>
         </div>

@@ -64,11 +64,11 @@ export const Experience = () => {
               <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
               <span className="font-label-sm text-primary tracking-[0.3em] uppercase">My Path</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
               Journey & <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Trajectory</span>
+              <span className="text-black">Trajectory</span>
             </h2>
-            <p className="text-on-surface-variant/70 font-body-md leading-relaxed max-w-sm">
+            <p className="text-black font-body-md leading-relaxed max-w-sm">
               A timeline of my professional growth, leadership roles, and contributions to the creative and technical ecosystem.
             </p>
             <div className="pt-8 hidden lg:block">
@@ -81,24 +81,24 @@ export const Experience = () => {
         <div className="lg:w-2/3 space-y-12">
           {experiences.map((exp, index) => (
             <div key={index} className="relative group">
-              <div className="glass-card rounded-[2rem] p-8 md:p-10 border-white/5 hover:border-primary/20 transition-all duration-500 hover:bg-white/[0.03]">
+              <div className="glass-card rounded-[2rem] p-8 md:p-10 border-black/5 group-hover:bg-black transition-colors duration-300">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
                   <div className="space-y-2">
-                    <span className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase">
+                    <span className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white text-xs font-bold tracking-widest uppercase transition-colors">
                       {exp.year}
                     </span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl md:text-3xl font-bold text-black group-hover:text-white transition-colors">
                       {exp.title}
                     </h3>
-                    <div className="flex items-center gap-2 text-on-surface-variant/60 font-label-md">
+                    <div className="flex items-center gap-2 text-black group-hover:text-white/70 font-label-md transition-colors">
                       <span className="uppercase tracking-wider">{exp.company}</span>
-                      <span className="w-1 h-1 bg-white/20 rounded-full"></span>
+                      <span className="w-1 h-1 bg-black/20 group-hover:bg-white/40 rounded-full transition-colors"></span>
                       <span>{exp.location}</span>
                     </div>
                   </div>
                   <div className="flex gap-2">
                     {exp.tags.map((tag, i) => (
-                      <span key={i} className="text-[10px] text-white/30 border border-white/10 px-2 py-1 rounded-md uppercase tracking-tighter">
+                      <span key={i} className="text-[10px] text-black group-hover:text-white/70 border border-black/10 group-hover:border-white/20 px-2 py-1 rounded-md uppercase tracking-tighter transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -106,15 +106,15 @@ export const Experience = () => {
                 </div>
 
                 <div className="space-y-6">
-                  <p className="text-on-surface-variant/80 font-body-md leading-relaxed text-lg italic border-l-2 border-primary/30 pl-6 py-1">
+                  <p className="text-black group-hover:text-white/90 font-body-md leading-relaxed text-lg italic border-l-2 border-primary/30 group-hover:border-white/40 pl-6 py-1 transition-colors">
                     "{exp.description}"
                   </p>
 
                   <div className="grid grid-cols-1 gap-4 pt-4">
                     {exp.achievements.map((achievement, i) => (
                       <div key={i} className="flex items-start gap-4">
-                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_8px_rgba(208,188,255,0.4)]"></div>
-                        <p className="text-on-surface-variant/70 text-sm leading-relaxed">{achievement}</p>
+                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary group-hover:bg-white flex-shrink-0 transition-colors"></div>
+                        <p className="text-black group-hover:text-white/80 text-sm leading-relaxed transition-colors">{achievement}</p>
                       </div>
                     ))}
                   </div>

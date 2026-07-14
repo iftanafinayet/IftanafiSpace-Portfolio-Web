@@ -67,11 +67,11 @@ export function Projects() {
       <header className="mb-12">
         <div className="flex flex-col gap-4 max-w-3xl">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(208,188,255,0.6)]"></span>
+            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0,0,0,0.2)]"></span>
             <span className="font-label-sm text-primary tracking-[0.2em] uppercase">Featured Projects</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Engineering digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">experiences</span> that scale.
+          <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+            Engineering digital <span className="text-black">experiences</span> that scale.
           </h2>
         </div>
       </header>
@@ -82,12 +82,12 @@ export function Projects() {
             key={index}
             className={`group flex flex-col ${project.large ? 'md:col-span-8' : 'md:col-span-4'}`}
           >
-            <div className="glass-card rounded-2xl overflow-hidden flex flex-col h-full border-white/5 hover:border-primary/20 transition-all duration-300">
+            <div className="glass-card rounded-2xl overflow-hidden flex flex-col h-full border-black/5 group-hover:bg-black transition-colors duration-300">
               <div className={`relative overflow-hidden ${project.large ? 'aspect-[21/9]' : 'aspect-video'}`}>
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  className="w-full h-full object-cover transition-colors duration-300 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
@@ -95,26 +95,26 @@ export function Projects() {
               <div className="p-6 md:p-8 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-[10px] font-bold tracking-widest text-primary/80 uppercase mb-1 block">{project.category}</span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                    <span className="text-[10px] font-bold tracking-widest text-black group-hover:text-white/60 uppercase mb-1 block transition-colors">{project.category}</span>
+                    <h3 className="text-2xl font-bold text-black group-hover:text-white transition-colors">{project.title}</h3>
                   </div>
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full glass-card hover:bg-primary hover:text-on-primary transition-colors"
+                    className="p-2 rounded-full glass-card group-hover:bg-white group-hover:text-black transition-colors"
                   >
                     <span className="material-symbols-outlined text-xl">north_east</span>
                   </a>
                 </div>
 
-                <p className="font-body-md text-on-surface-variant/80 text-sm mb-6 line-clamp-2">
+                <p className="font-body-md text-black group-hover:text-white/80 text-sm mb-6 line-clamp-2 transition-colors">
                   {project.description}
                 </p>
 
                 <div className="mt-auto flex flex-wrap gap-2">
                   {project.tech.map((t, i) => (
-                    <span key={i} className="px-3 py-1 rounded-md text-[10px] font-medium bg-white/5 text-white/50 border border-white/10 uppercase tracking-tight">
+                    <span key={i} className="px-3 py-1 rounded-md text-[10px] font-medium bg-black/5 text-black border border-black/10 group-hover:bg-white/10 group-hover:text-white group-hover:border-white/20 uppercase tracking-tight transition-colors">
                       {t}
                     </span>
                   ))}
@@ -129,14 +129,14 @@ export function Projects() {
       <section className="mt-20">
         <div className="glass-card rounded-3xl p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 border-primary/10">
           <div className="max-w-xl text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Interested in <span className="text-primary italic">collaborating</span>?</h2>
-            <p className="text-on-surface-variant/70">I'm always looking for new challenges and interesting projects to work on.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Interested in <span className="text-primary italic">collaborating</span>?</h2>
+            <p className="text-black">I'm always looking for new challenges and interesting projects to work on.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            < a href="#contact" className="bg-primary text-on-primary px-8 py-3.5 rounded-xl font-semibold hover:opacity-90 transition-all">
+            < a href="#contact" className="bg-black text-white border border-black px-8 py-3.5 rounded-xl font-semibold hover:bg-white hover:text-black transition-colors duration-200">
               LET'S TALK
             </a>
-            < a href="/assets/NayetIftanafi_Resume.pdf" className="glass-card px-8 py-3.5 rounded-xl font-semibold text-white border-white/10 hover:bg-white/5 transition-all">
+            < a href="/assets/NayetIftanafi_Resume.pdf" className="glass-card px-8 py-3.5 rounded-xl font-semibold text-black border-black/10 hover:bg-black hover:text-white transition-colors duration-200">
               VIEW RESUME
             </a>
           </div>
