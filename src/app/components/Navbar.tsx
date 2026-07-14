@@ -4,7 +4,7 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'process', 'work', 'contact'];
+    const sectionIds = ['home', 'about', 'process', 'work', 'pricing', 'contact'];
 
     const observerOptions = {
       root: null,
@@ -40,6 +40,7 @@ export function Navbar() {
     { name: 'About', href: '#about', id: 'about' },
     { name: 'Process', href: '#process', id: 'process' },
     { name: 'Work', href: '#work', id: 'work' },
+    { name: 'Pricing', href: '#pricing', id: 'pricing' },
   ];
 
   return (
