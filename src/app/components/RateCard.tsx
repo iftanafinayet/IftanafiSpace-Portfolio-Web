@@ -3,7 +3,8 @@ export function RateCard() {
     {
       name: 'Paket UMKM',
       subtitle: 'Landing Page',
-      price: 'Rp 450.000 – Rp 650.000',
+      price: 'Rp 450.000',
+      priceRange: '– Rp 650.000',
       priceLabel: 'Harga',
       duration: '2 - 3 Hari Kerja',
       accent: 'from-black to-black',
@@ -20,7 +21,8 @@ export function RateCard() {
     {
       name: 'Paket Company Profile',
       subtitle: 'Multi-Page Website',
-      price: 'Rp 1.200.000 – Rp 1.800.000',
+      price: 'Rp 1.200.000',
+      priceRange: '– Rp 1.800.000',
       priceLabel: 'Harga',
       duration: '5 - 10 Hari Kerja',
       accent: 'from-black to-black',
@@ -36,6 +38,7 @@ export function RateCard() {
       name: 'Paket Kustom Bisnis',
       subtitle: 'Web App',
       price: 'Mulai Rp 3.500.000',
+      priceRange: '',
       priceLabel: 'Harga',
       duration: 'Mulai 14 Hari Kerja',
       accent: 'from-black to-black',
@@ -54,61 +57,84 @@ export function RateCard() {
     {
       name: 'Domain & Hosting',
       note: 'Tahun Pertama',
-      price: '+Rp 250.000 – Rp 350.000',
+      price: '+Rp 250rb – 350rb',
       icon: 'language'
     },
     {
       name: 'Maintenance & Update Konten',
       note: 'Per Bulan',
-      price: 'Rp 200.000 / bulan',
+      price: 'Rp 200rb / bln',
       icon: 'build'
     }
   ];
 
   return (
-    <section id="pricing" className="max-w-[1400px] mx-auto px-6 py-16">
-      <header className="mb-12">
-        <div className="flex flex-col gap-4 max-w-3xl">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0,0,0,0.2)]"></span>
-            <span className="font-label-sm text-primary tracking-[0.2em] uppercase">Rate Card</span>
+    <section id="pricing" className="max-w-[1400px] mx-auto px-5 sm:px-6 py-16 md:py-24">
+      <header className="mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-4xl">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0,0,0,0.2)]"></span>
+              <span className="font-label-sm text-primary tracking-[0.2em] uppercase">Rate Card</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
+              Transparent <span className="text-black italic">pricing</span> for every scale.
+            </h2>
+            <p className="font-body-md text-black max-w-lg">
+              Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Semua paket sudah termasuk desain modern dan responsif.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-            Transparent <span className="text-black">pricing</span> for every scale.
-          </h2>
-          <p className="font-body-md text-black">
-            Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Semua paket sudah termasuk desain modern dan responsif.
-          </p>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <span className="material-symbols-outlined text-primary">verified_user</span>
+            <p className="text-xs font-medium text-black/60 max-w-[180px] uppercase tracking-wider">Garansi revisi & support after-launch</p>
+          </div>
         </div>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Pricing Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {packages.map((pkg, index) => (
           <div
             key={index}
-            className={`group glass-card rounded-2xl p-8 flex flex-col transition-colors duration-300 ${
+            className={`group glass-card rounded-[1.75rem] p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 ease-out ${
               pkg.highlighted
-                ? 'border-primary/40 shadow-[0_0_40px_rgba(0,0,0,0.06)] md:-translate-y-2 hover:bg-black'
-                : 'border-black/5 hover:bg-black'
+                ? 'border-black lg:scale-[1.03] hover:bg-black md:-translate-y-2 shadow-[0_20px_60px_rgba(0,0,0,0.12)]'
+                : 'border-black/5 hover:bg-black hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15'
             }`}
           >
+            {/* Decorative gradient spot (highlighted only) */}
             {pkg.highlighted && (
-              <span className="self-start mb-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-primary/20 text-primary border border-primary/30 group-hover:bg-white/10 group-hover:text-white group-hover:border-white/30 transition-colors">
-                Most Popular
-              </span>
+              <>
+                <div className="absolute -top-16 -right-16 w-48 h-48 bg-white/[0.06] blur-2xl rounded-full transition-colors duration-300"></div>
+                <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-white text-black shadow-sm">
+                  Most Popular
+                </span>
+              </>
             )}
 
-            <div className="flex items-center gap-2 mb-1">
-              <span className={`w-2 h-2 rounded-full group-hover:bg-white transition-colors ${pkg.dotColor}`}></span>
-              <span className="text-[10px] font-bold tracking-widest text-black group-hover:text-white/60 uppercase transition-colors">{pkg.subtitle}</span>
-            </div>
-            <h3 className="text-2xl font-bold text-black mb-6 group-hover:text-white transition-colors">{pkg.name}</h3>
-
+            {/* Package header */}
             <div className="mb-6">
-              <span className="text-[10px] font-bold tracking-widest text-black group-hover:text-white/60 uppercase block mb-1 transition-colors">{pkg.priceLabel}</span>
-              <p className="text-xl font-bold text-black group-hover:text-white transition-colors">{pkg.price}</p>
+              <div className="flex items-center gap-2 mb-1">
+                <span className={`w-2 h-2 rounded-full group-hover:bg-white transition-colors ${pkg.dotColor}`}></span>
+                <span className="text-[10px] font-bold tracking-widest text-black group-hover:text-white/60 uppercase transition-colors">{pkg.subtitle}</span>
+              </div>
+              <h3 className="text-2xl font-bold text-black mb-2 group-hover:text-white transition-colors">{pkg.name}</h3>
+              <div className="h-px w-full bg-black/10 group-hover:bg-white/15 my-5 transition-colors"></div>
             </div>
 
+            {/* Pricing */}
+            <div className="mb-7">
+              <span className="text-[10px] font-bold tracking-widest text-black group-hover:text-white/60 uppercase block mb-1 transition-colors">{pkg.priceLabel}</span>
+              <p className="font-['Space_Grotesk'] text-2xl font-bold text-black group-hover:text-white transition-colors">
+                {pkg.price}
+                {pkg.priceRange && (
+                  <span className="text-black/40 group-hover:text-white/40 transition-colors">{pkg.priceRange}</span>
+                )}
+              </p>
+            </div>
+
+            {/* Features */}
             <ul className="space-y-3 mb-8 flex-grow">
               {pkg.features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-black group-hover:text-white/80 transition-colors">
@@ -118,6 +144,7 @@ export function RateCard() {
               ))}
             </ul>
 
+            {/* Duration */}
             <div className="flex items-center gap-2 mb-6 text-sm text-black group-hover:text-white/70 transition-colors">
               <span className="material-symbols-outlined text-base">schedule</span>
               <span>{pkg.duration}</span>
@@ -125,7 +152,7 @@ export function RateCard() {
 
             <a
               href="#contact"
-              className={`text-center px-6 py-3.5 rounded-xl font-semibold transition-all duration-200 active:scale-95 ${
+              className={`text-center px-6 py-4 rounded-xl font-semibold transition-all duration-300 ease-out active:scale-95 ${
                 pkg.highlighted
                   ? 'bg-black text-white border border-black group-hover:bg-white group-hover:text-black'
                   : 'glass-card text-black border-black/10 group-hover:bg-white group-hover:text-black'
@@ -138,14 +165,19 @@ export function RateCard() {
       </div>
 
       {/* Add-ons */}
-      <div className="mt-10">
-        <div className="flex items-center gap-2 mb-6">
-          <span className="material-symbols-outlined text-primary">add_circle</span>
-          <h3 className="text-xl font-bold text-black">Layanan Tambahan <span className="text-black text-sm font-normal">(Optional)</span></h3>
+      <div className="mt-14">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-10 h-10 rounded-xl bg-black/5 border border-black/10 flex items-center justify-center">
+            <span className="material-symbols-outlined text-primary">add_circle</span>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-black">Layanan Tambahan</h3>
+            <p className="text-xs text-black/50 uppercase tracking-widest">Optional Add-ons</p>
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {addons.map((addon, index) => (
-            <div key={index} className="group glass-card rounded-xl p-6 flex items-center justify-between gap-4 border-black/5 hover:bg-black transition-colors duration-300">
+            <div key={index} className="group glass-card rounded-xl p-6 flex items-center justify-between gap-4 border-black/5 hover:bg-black transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15">
               <div className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary group-hover:text-white group-hover:bg-white/10 p-3 rounded-lg bg-black/5 transition-colors">{addon.icon}</span>
                 <div>
@@ -153,7 +185,7 @@ export function RateCard() {
                   <p className="text-xs text-black group-hover:text-white/60 uppercase tracking-widest transition-colors">{addon.note}</p>
                 </div>
               </div>
-              <p className="font-bold text-primary group-hover:text-white whitespace-nowrap transition-colors">{addon.price}</p>
+              <p className="font-['Space_Grotesk'] font-bold text-primary group-hover:text-white whitespace-nowrap transition-colors">{addon.price}</p>
             </div>
           ))}
         </div>

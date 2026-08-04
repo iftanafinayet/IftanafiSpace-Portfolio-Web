@@ -37,17 +37,60 @@ export default function App() {
           <motion.div
             key="loader"
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, y: -20, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
-            className="fixed inset-0 bg-[#fafafa] z-[999] flex flex-col items-center justify-center overflow-hidden"
+            exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
+            className="fixed inset-0 bg-[#fafafa] z-[999] overflow-hidden"
           >
-            <div className="absolute bottom-12 left-12 flex flex-col gap-1">
-              <div className="w-8 h-[1px] bg-primary/40"></div>
-              <span className="text-[8px] font-bold tracking-[0.4em] text-black uppercase italic">Architectural Core v1.0</span>
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
+              <div className="overflow-hidden">
+                <div className="flex">
+                  {'NAYET IFTANAFI'.split('').map((char, i) => (
+                    <motion.span
+                      key={i}
+                      initial={{ y: '110%' }}
+                      animate={{ y: 0 }}
+                      transition={{ duration: 0.7, delay: 0.05 * i, ease: [0.33, 1, 0.68, 1] }}
+                      className="inline-block text-black font-bold tracking-tighter text-[clamp(36px,8vw,96px)] font-['Space_Grotesk'] leading-none"
+                    >
+                      {char === ' ' ? '\u00A0' : char}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.6 }}
+                className="mt-6 flex items-center gap-3"
+              >
+                <span className="w-8 h-[1px] bg-black/30"></span>
+                <span className="text-[10px] font-bold tracking-[0.5em] text-black/50 uppercase">Full Stack Developer</span>
+                <span className="w-8 h-[1px] bg-black/30"></span>
+              </motion.div>
+            </div>
+
+            <div className="absolute bottom-8 right-8 md:bottom-10 md:right-12 leading-none">
+              <span className="text-7xl md:text-9xl font-bold text-black/10 tabular-nums tracking-tighter font-['Space_Grotesk']">
+                {progress}
+              </span>
+              <span className="text-2xl md:text-4xl font-bold text-black/10">%</span>
+            </div>
+
+            <div className="absolute bottom-12 left-8 md:left-12 hidden sm:flex flex-col gap-1">
+              <div className="w-8 h-[1px] bg-black/40"></div>
+              <span className="text-[8px] font-bold tracking-[0.4em] text-black/40 uppercase">Iftanafi.Space — Portfolio</span>
+            </div>
+
+            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-black/5">
+              <motion.div
+                className="h-full bg-black"
+                initial={{ width: 0 }}
+                animate={{ width: `${progress}%` }}
+                transition={{ ease: 'linear' }}
+              />
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-      ...
 
       {!loading && (
         <motion.div

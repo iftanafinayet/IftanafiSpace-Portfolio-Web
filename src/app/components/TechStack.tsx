@@ -4,24 +4,28 @@ export function TechStack() {
   const categories = [
     {
       label: 'Frontend',
-      skills: ['React', 'JavaScript', 'Tailwind CSS', 'JavaScript', 'Flutter']
+      icon: 'code',
+      skills: ['React', 'JavaScript', 'Tailwind CSS', 'Flutter'],
     },
     {
       label: 'Backend',
-      skills: ['Node.js', 'Express', 'MongoDB', 'MySQL', 'REST API']
+      icon: 'dns',
+      skills: ['Node.js', 'Express', 'MongoDB', 'MySQL', 'REST API'],
     },
     {
       label: 'Tools & Others',
-      skills: ['Git', 'Docker', 'Firebase', 'Figma']
-    }
+      icon: 'handyman',
+      skills: ['Git', 'Docker', 'Firebase', 'Figma'],
+    },
   ];
 
-  // Combined for the marquee
+  // Combined for the marquee — duplicated twice for a seamless loop
   const allSkills = [...categories[0].skills, ...categories[1].skills, ...categories[2].skills];
+  const marqueeRow = [...allSkills, ...allSkills];
 
   return (
-    <section className="py-24 overflow-hidden bg-neutral-100">
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-24 mb-16">
+    <section className="py-16 md:py-24 overflow-hidden bg-neutral-100">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-24 mb-12 md:mb-16">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -44,21 +48,21 @@ export function TechStack() {
         {/* Row 1: Moving Right */}
         <div className="flex overflow-hidden select-none">
           <motion.div
-            className="flex flex-nowrap gap-6 min-w-full"
-            animate={{ x: [0, -1000] }}
+            className="flex flex-nowrap w-max"
+            animate={{ x: ['0%', '-50%'] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 25,
+                duration: 30,
                 ease: "linear",
               }
             }}
           >
-            {[...allSkills, ...allSkills, ...allSkills].map((skill, index) => (
+            {marqueeRow.map((skill, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-black/5 flex items-center gap-3 group hover:bg-black transition-colors"
+                className="flex-shrink-0 mr-6 px-8 py-4 glass-card rounded-2xl border-black/5 flex items-center gap-3 group hover:bg-black transition-colors duration-300 ease-out"
               >
                 <span className="w-2 h-2 rounded-full bg-black/40 group-hover:bg-white transition-colors"></span>
                 <span className="text-lg font-medium text-black group-hover:text-white transition-colors uppercase tracking-widest">{skill}</span>
@@ -70,21 +74,21 @@ export function TechStack() {
         {/* Row 2: Moving Left */}
         <div className="flex overflow-hidden select-none">
           <motion.div
-            className="flex flex-nowrap gap-6 min-w-full"
-            animate={{ x: [-1000, 0] }}
+            className="flex flex-nowrap w-max"
+            animate={{ x: ['-50%', '0%'] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 36,
                 ease: "linear",
               }
             }}
           >
-            {[...allSkills, ...allSkills, ...allSkills].reverse().map((skill, index) => (
+            {[...marqueeRow].reverse().map((skill, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 px-8 py-4 glass-card rounded-2xl border-black/5 flex items-center gap-3 group hover:bg-black transition-colors"
+                className="flex-shrink-0 mr-6 px-8 py-4 glass-card rounded-2xl border-black/5 flex items-center gap-3 group hover:bg-black transition-colors duration-300 ease-out"
               >
                 <span className="w-2 h-2 rounded-full bg-black/40 group-hover:bg-white transition-colors"></span>
                 <span className="text-lg font-medium text-black group-hover:text-white transition-colors uppercase tracking-widest">{skill}</span>
@@ -95,20 +99,50 @@ export function TechStack() {
       </div>
 
       {/* Categorized View */}
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-24 mt-32 grid grid-cols-1 md:grid-cols-3 gap-16">
-        {categories.map((cat, index) => (
-          <div key={index} className="space-y-8">
-            <h4 className="text-primary font-bold tracking-[0.3em] text-sm uppercase border-b border-primary/20 pb-4 block w-full">
-              {cat.label}
-            </h4>
-            <div className="flex flex-col gap-4">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-24 mt-16 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {categories.map((cat, catIndex) => (
+          <motion.div
+            key={cat.label}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+            className="glass-card rounded-[1.5rem] p-8 border-black/5 group hover:bg-black transition-colors duration-300"
+          >
+            {/* Category header */}
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-black/5 border border-black/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-white/20 transition-colors">
+                  <span className="material-symbols-outlined text-black group-hover:text-white text-xl transition-colors">
+                    {cat.icon}
+                  </span>
+                </div>
+                <h4 className="text-primary group-hover:text-white text-sm font-bold tracking-[0.3em] uppercase transition-colors">
+                  {cat.label}
+                </h4>
+              </div>
+              <span className="px-2.5 py-1 rounded-full bg-black/5 border border-black/10 text-[11px] font-semibold text-black/50 group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white/50 transition-colors tabular-nums">
+                {cat.skills.length}
+              </span>
+            </div>
+
+            {/* Skills list */}
+            <div className="flex flex-col gap-0.5">
               {cat.skills.map((skill, i) => (
-                <span key={i} className="text-2xl md:text-4xl font-bold text-black hover:bg-black hover:text-white px-2 -mx-2 rounded-lg transition-colors duration-300 cursor-default hover:translate-x-2 inline-block">
-                  {skill}
-                </span>
+                <div
+                  key={i}
+                  className="flex items-center gap-3 py-3 px-3 -mx-3 rounded-xl hover:bg-white/50 group-hover:hover:bg-white/5 transition-colors cursor-default"
+                >
+                  <span className="text-[11px] font-medium text-black/25 group-hover:text-white/25 tabular-nums font-['Space_Grotesk']">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="font-['Space_Grotesk'] text-lg md:text-xl font-bold text-black group-hover:text-white transition-colors">
+                    {skill}
+                  </span>
+                </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

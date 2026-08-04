@@ -1,19 +1,32 @@
+import { motion } from 'framer-motion';
 import ukmKemasanImg from '../../assets/UKMKemasan.webp';
 import tegalEatsImg from '../../assets/TegalEats.webp';
 import dompetGuaImg from '../../assets/DompetGua.webp';
 import smartGroceriesImg from '../../assets/SmartGroceries.webp';
 import rumahBalonTegalImg from '../../assets/RumahBalon.webp';
 
+interface Project {
+  title: string;
+  category: string;
+  description: string;
+  tech: string[];
+  image: string;
+  live: string;
+  size: 'featured' | 'wide' | 'tall' | 'standard';
+}
+
 export function Projects() {
-  const projects = [
+  // Bento grid — setiap baris mengisi penuh 12 kolom agar rapi
+  // Baris 1: featured(7) + tall(5) | Baris 2: tall(5) + featured(7) | Baris 3: wide(6) + wide(6)
+  const projects: Project[] = [
     {
-      title: 'UKM KEMASAN ERP',
+      title: 'UKM Kemasan ERP',
       category: 'ERP & POS System • 2024',
       description: 'A comprehensive ERP and POS system streamlining operations for SMEs with real-time inventory tracking and sales analytics.',
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Redux'],
+      tech: ['React', 'Node.js', 'PostgreSQL', 'Redux'],
       image: ukmKemasanImg,
       live: 'https://ukmkemasan-erp-frontend.vercel.app/portal',
-      large: true
+      size: 'featured'
     },
     {
       title: 'WEATHER FORECAST',
@@ -22,7 +35,25 @@ export function Projects() {
       tech: ['MERN Stack', 'OpenWeather API', 'Chart.js'],
       image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
       live: 'https://isweatherapp.netlify.app/',
-      large: false
+      size: 'tall'
+    },
+    {
+      title: 'DOMPET GUA',
+      category: 'Fintech • 2024',
+      description: 'Personal finance manager with intuitive expense tracking, budgeting tools, and financial health summaries.',
+      tech: ['React', 'Framer Motion', 'Zustand'],
+      image: dompetGuaImg,
+      live: 'https://dompetgua.netlify.app/',
+      size: 'featured'
+    },
+    {
+      title: 'SMART GROCERIES',
+      category: 'Market Analysis • 2025',
+      description: 'A comprehensive market analysis platform for SMEs with real-time inventory tracking and sales analytics.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      image: smartGroceriesImg,
+      live: 'https://smart-groceries-dashboard.vercel.app/',
+      size: 'tall'
     },
     {
       title: 'TEGAL EATS',
@@ -31,25 +62,7 @@ export function Projects() {
       tech: ['React', 'Firebase', 'Google Maps API'],
       image: tegalEatsImg,
       live: 'https://tegal-eats-uvfk.vercel.app',
-      large: false
-    },
-    {
-      title: 'DOMPET GUA',
-      category: 'Fintech • 2024',
-      description: 'Personal finance manager with intuitive expense tracking, budgeting tools, and financial health summaries.',
-      tech: ['React', 'Framer Motion', 'Zustand', 'Glassmorphism'],
-      image: dompetGuaImg,
-      live: 'https://dompetgua.netlify.app/',
-      large: true
-    },
-    {
-      title: 'SMART GROCERIES',
-      category: 'Market Analysis • 2025',
-      description: 'A comprehensive market analysis platform for SMEs with real-time inventory tracking and sales analytics.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS', 'Redux'],
-      image: smartGroceriesImg,
-      live: 'https://smart-groceries-dashboard.vercel.app/',
-      large: false
+      size: 'wide'
     },
     {
       title: 'RUMAH BALON TEGAL',
@@ -58,85 +71,125 @@ export function Projects() {
       tech: ['React', 'Tailwind CSS'],
       image: rumahBalonTegalImg,
       live: 'https://rumahbalontgl.vercel.app/',
-      large: false
+      size: 'wide'
     }
   ];
 
+  const sizeClasses: Record<Project['size'], string> = {
+    featured: 'md:col-span-7',
+    wide: 'md:col-span-6',
+    tall: 'md:col-span-5',
+    standard: 'md:col-span-4'
+  };
+
   return (
-    <section id="work" className="max-w-[1400px] mx-auto px-6 py-16">
-      <header className="mb-12">
+    <section id="work" className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-24 py-16 md:py-24">
+      <header className="mb-10 md:mb-16">
         <div className="flex flex-col gap-4 max-w-3xl">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0,0,0,0.2)]"></span>
-            <span className="font-label-sm text-primary tracking-[0.2em] uppercase">Featured Projects</span>
+            <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+            <span className="font-label-sm text-primary tracking-[0.3em] uppercase">
+              Featured Projects
+            </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-            Engineering digital <span className="text-black">experiences</span> that scale.
+          <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
+            Engineering digital <span className="text-black italic">experiences</span> that scale.
           </h2>
+          <p className="font-body-md text-black max-w-lg leading-relaxed">
+            A curated selection of products, platforms, and experiences I've engineered from
+            concept to deployment.
+          </p>
         </div>
       </header>
 
+      {/* Bento Grid — setiap baris mengisi 12 kolom */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className={`group flex flex-col ${project.large ? 'md:col-span-8' : 'md:col-span-4'}`}
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5, delay: index * 0.06 }}
+            className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-black/5 glass-card hover:bg-black transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15 ${
+              sizeClasses[project.size]
+            }`}
           >
-            <div className="glass-card rounded-2xl overflow-hidden flex flex-col h-full border-black/5 group-hover:bg-black transition-colors duration-300">
-              <div className={`relative overflow-hidden ${project.large ? 'aspect-[21/9]' : 'aspect-video'}`}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-colors duration-300 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            {/* Image fills the whole card */}
+            <div className="absolute inset-0 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0 group-hover:opacity-30 opacity-90"
+              />
+              {/* Dark overlay that strengthens on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent group-hover:from-black/95 group-hover:via-black/70 group-hover:to-black/40 transition-all duration-500"></div>
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 flex flex-col justify-end h-full min-h-[320px] md:min-h-[360px] p-6 md:p-7">
+              {/* Top row: category + live link (always visible) */}
+              <div className="flex items-start justify-between mb-auto">
+                <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[10px] font-bold tracking-widest text-white uppercase">
+                  {project.category}
+                </span>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${project.title} live preview`}
+                  className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white transition-all duration-300 hover:bg-white hover:text-black active:scale-95"
+                >
+                  <span className="material-symbols-outlined text-xl">launch</span>
+                </a>
               </div>
 
-              <div className="p-6 md:p-8 flex flex-col flex-grow">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <span className="text-[10px] font-bold tracking-widest text-black group-hover:text-white/60 uppercase mb-1 block transition-colors">{project.category}</span>
-                    <h3 className="text-2xl font-bold text-black group-hover:text-white transition-colors">{project.title}</h3>
-                  </div>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full glass-card group-hover:bg-white group-hover:text-black transition-colors"
-                  >
-                    <span className="material-symbols-outlined text-xl">north_east</span>
-                  </a>
-                </div>
-
-                <p className="font-body-md text-black group-hover:text-white/80 text-sm mb-6 line-clamp-2 transition-colors">
+              {/* Bottom content */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="font-body-md text-white/80 text-sm mb-5 line-clamp-3 md:line-clamp-none leading-relaxed">
                   {project.description}
                 </p>
-
-                <div className="mt-auto flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((t, i) => (
-                    <span key={i} className="px-3 py-1 rounded-md text-[10px] font-medium bg-black/5 text-black border border-black/10 group-hover:bg-white/10 group-hover:text-white group-hover:border-white/20 uppercase tracking-tight transition-colors">
+                    <span
+                      key={i}
+                      className="px-3 py-1 rounded-md text-[10px] font-medium bg-white/10 backdrop-blur-sm border border-white/15 text-white/90 uppercase tracking-tight"
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Mini CTA */}
-      <section className="mt-20">
-        <div className="glass-card rounded-3xl p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 border-primary/10">
+      <section className="mt-16 md:mt-24">
+        <div className="glass-card rounded-3xl p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 border-primary/10">
           <div className="max-w-xl text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Interested in <span className="text-primary italic">collaborating</span>?</h2>
-            <p className="text-black">I'm always looking for new challenges and interesting projects to work on.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              Interested in <span className="text-primary italic">collaborating</span>?
+            </h2>
+            <p className="font-body-md text-black">
+              I'm always looking for new challenges and interesting projects to work on.
+            </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            < a href="#contact" className="bg-black text-white border border-black px-8 py-3.5 rounded-xl font-semibold hover:bg-white hover:text-black transition-colors duration-200">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <a
+              href="#contact"
+              className="bg-black text-white border border-black px-8 py-3.5 rounded-xl font-label-md hover:bg-white hover:text-black transition-all duration-300 ease-out active:scale-95 text-center"
+            >
               LET'S TALK
             </a>
-            < a href="/assets/NayetIftanafi_Resume.pdf" className="glass-card px-8 py-3.5 rounded-xl font-semibold text-black border-black/10 hover:bg-black hover:text-white transition-colors duration-200">
+            <a
+              href="/assets/NayetIftanafi_Resume.pdf"
+              className="glass-card px-8 py-3.5 rounded-xl font-label-md text-black border border-black/10 hover:bg-black hover:text-white transition-all duration-300 ease-out active:scale-95 text-center"
+            >
               VIEW RESUME
             </a>
           </div>

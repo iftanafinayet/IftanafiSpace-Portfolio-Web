@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export const Experience = () => {
   const experiences = [
     {
@@ -55,8 +57,8 @@ export const Experience = () => {
   ];
 
   return (
-    <section id="process" className="max-w-[1400px] mx-auto px-6 py-24">
-      <div className="flex flex-col lg:flex-row gap-16">
+    <section id="process" className="max-w-[1400px] mx-auto px-5 sm:px-6 py-16 md:py-24">
+      <div className="flex flex-col lg:flex-row gap-12 md:gap-16">
         {/* Left Column: Sticky Header */}
         <div className="lg:w-1/3">
           <div className="lg:sticky lg:top-32 space-y-6">
@@ -64,13 +66,26 @@ export const Experience = () => {
               <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
               <span className="font-label-sm text-primary tracking-[0.3em] uppercase">My Path</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
               Journey & <br />
               <span className="text-black">Trajectory</span>
             </h2>
             <p className="text-black font-body-md leading-relaxed max-w-sm">
               A timeline of my professional growth, leadership roles, and contributions to the creative and technical ecosystem.
             </p>
+
+            {/* Mini stats */}
+            <div className="flex gap-8 pt-4">
+              <div>
+                <p className="font-['Space_Grotesk'] text-2xl font-bold text-black">4</p>
+                <p className="text-[10px] font-medium text-black/45 tracking-[0.2em] uppercase mt-1">Roles Held</p>
+              </div>
+              <div>
+                <p className="font-['Space_Grotesk'] text-2xl font-bold text-black">3</p>
+                <p className="text-[10px] font-medium text-black/45 tracking-[0.2em] uppercase mt-1">Organizations</p>
+              </div>
+            </div>
+
             <div className="pt-8 hidden lg:block">
               <div className="w-px h-32 bg-gradient-to-b from-primary/50 to-transparent ml-1"></div>
             </div>
@@ -78,50 +93,74 @@ export const Experience = () => {
         </div>
 
         {/* Right Column: Timeline Items */}
-        <div className="lg:w-2/3 space-y-12">
-          {experiences.map((exp, index) => (
-            <div key={index} className="relative group">
-              <div className="glass-card rounded-[2rem] p-8 md:p-10 border-black/5 group-hover:bg-black transition-colors duration-300">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
-                  <div className="space-y-2">
-                    <span className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white text-xs font-bold tracking-widest uppercase transition-colors">
-                      {exp.year}
-                    </span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-black group-hover:text-white transition-colors">
-                      {exp.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-black group-hover:text-white/70 font-label-md transition-colors">
-                      <span className="uppercase tracking-wider">{exp.company}</span>
-                      <span className="w-1 h-1 bg-black/20 group-hover:bg-white/40 rounded-full transition-colors"></span>
-                      <span>{exp.location}</span>
+        <div className="lg:w-2/3 relative">
+          {/* Vertical timeline line (desktop) */}
+          <div className="hidden lg:block absolute left-0 top-2 bottom-2 w-px bg-black/10"></div>
+
+          <div className="space-y-10 md:space-y-12">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.55, delay: index * 0.05 }}
+                className="relative lg:pl-12 group"
+              >
+                {/* Timeline node */}
+                <div className="hidden lg:flex absolute left-0 top-8 -translate-x-1/2 flex-col items-center gap-2">
+                  <span className="w-3.5 h-3.5 rounded-full border-2 border-black/20 bg-white group-hover:bg-black transition-colors duration-300"></span>
+                </div>
+
+                {/* Numbered index badge */}
+                <span className="absolute top-6 -left-2 lg:left-0 lg:top-6 font-['Space_Grotesk'] text-[11px] font-bold text-black/25 group-hover:text-black/50 transition-colors">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+
+                <div className="glass-card rounded-[2rem] p-6 md:p-10 border-black/5 group-hover:bg-black transition-all duration-300 ease-out group-hover:-translate-y-1 group-hover:shadow-xl group-hover:shadow-black/15">
+                  <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
+                    <div className="space-y-3">
+                      <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white text-xs font-bold tracking-widest uppercase transition-colors">
+                        {exp.year}
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-bold text-black group-hover:text-white transition-colors">
+                        {exp.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-black group-hover:text-white/70 font-label-md transition-colors">
+                        <span className="material-symbols-outlined text-base text-primary group-hover:text-white/70 transition-colors">business</span>
+                        <span className="uppercase tracking-wider">{exp.company}</span>
+                        <span className="w-1 h-1 bg-black/20 group-hover:bg-white/40 rounded-full transition-colors"></span>
+                        <span className="material-symbols-outlined text-base">location_on</span>
+                        <span>{exp.location}</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2 shrink-0">
+                      {exp.tags.map((tag, i) => (
+                        <span key={i} className="text-[10px] text-black group-hover:text-white/70 border border-black/10 group-hover:border-white/20 px-2.5 py-1 rounded-md uppercase tracking-tighter transition-colors">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                  <div className="flex gap-2">
-                    {exp.tags.map((tag, i) => (
-                      <span key={i} className="text-[10px] text-black group-hover:text-white/70 border border-black/10 group-hover:border-white/20 px-2 py-1 rounded-md uppercase tracking-tighter transition-colors">
-                        {tag}
-                      </span>
-                    ))}
+
+                  <div className="space-y-6">
+                    <p className="text-black group-hover:text-white/90 font-body-md leading-relaxed text-lg italic border-l-2 border-primary/30 group-hover:border-white/40 pl-6 py-1 transition-colors">
+                      "{exp.description}"
+                    </p>
+
+                    <div className="grid grid-cols-1 gap-4 pt-4">
+                      {exp.achievements.map((achievement, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary group-hover:bg-white flex-shrink-0 transition-colors"></div>
+                          <p className="text-black group-hover:text-white/80 text-sm leading-relaxed transition-colors">{achievement}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                <div className="space-y-6">
-                  <p className="text-black group-hover:text-white/90 font-body-md leading-relaxed text-lg italic border-l-2 border-primary/30 group-hover:border-white/40 pl-6 py-1 transition-colors">
-                    "{exp.description}"
-                  </p>
-
-                  <div className="grid grid-cols-1 gap-4 pt-4">
-                    {exp.achievements.map((achievement, i) => (
-                      <div key={i} className="flex items-start gap-4">
-                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary group-hover:bg-white flex-shrink-0 transition-colors"></div>
-                        <p className="text-black group-hover:text-white/80 text-sm leading-relaxed transition-colors">{achievement}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
