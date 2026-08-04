@@ -69,18 +69,18 @@ export function RateCard() {
   ];
 
   return (
-    <section id="pricing" className="max-w-[1400px] mx-auto px-5 sm:px-6 py-16 md:py-24">
-      <header className="mb-12 md:mb-16">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-4xl">
-          <div className="flex flex-col gap-4">
+    <section id="pricing" className="max-w-[1400px] mx-auto px-5 sm:px-6 py-10 sm:py-16 md:py-24">
+      <header className="mb-8 sm:mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 max-w-4xl">
+          <div className="flex flex-col gap-3 sm:gap-4">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(0,0,0,0.2)]"></span>
-              <span className="font-label-sm text-primary tracking-[0.2em] uppercase">Rate Card</span>
+              <span className="label-mono text-primary tracking-[0.2em] uppercase">Rate Card</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
-              Transparent <span className="text-black italic">pricing</span> for every scale.
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black leading-tight">
+              Transparent <span className="accent-serif">pricing</span> for every scale.
             </h2>
-            <p className="font-body-md text-black max-w-lg">
+            <p className="text-[15px] text-black/55 md:text-base max-w-lg leading-relaxed">
               Pilih paket yang sesuai dengan kebutuhan bisnis Anda. Semua paket sudah termasuk desain modern dan responsif.
             </p>
           </div>
@@ -93,11 +93,11 @@ export function RateCard() {
       </header>
 
       {/* Pricing Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {packages.map((pkg, index) => (
           <div
             key={index}
-            className={`group glass-card rounded-[1.75rem] p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 ease-out ${
+            className={`group glass-card rounded-[1.5rem] sm:rounded-[1.75rem] p-5 sm:p-6 md:p-8 flex flex-col relative overflow-hidden transition-all duration-300 ease-out ${
               pkg.highlighted
                 ? 'border-black lg:scale-[1.03] hover:bg-black md:-translate-y-2 shadow-[0_20px_60px_rgba(0,0,0,0.12)]'
                 : 'border-black/5 hover:bg-black hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15'
@@ -107,7 +107,7 @@ export function RateCard() {
             {pkg.highlighted && (
               <>
                 <div className="absolute -top-16 -right-16 w-48 h-48 bg-white/[0.06] blur-2xl rounded-full transition-colors duration-300"></div>
-                <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-white text-black shadow-sm">
+                <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-mono-num font-bold tracking-widest uppercase bg-black text-white group-hover:bg-white group-hover:text-black shadow-sm transition-colors">
                   Most Popular
                 </span>
               </>
@@ -126,7 +126,7 @@ export function RateCard() {
             {/* Pricing */}
             <div className="mb-7">
               <span className="text-[10px] font-bold tracking-widest text-black group-hover:text-white/60 uppercase block mb-1 transition-colors">{pkg.priceLabel}</span>
-              <p className="font-['Space_Grotesk'] text-2xl font-bold text-black group-hover:text-white transition-colors">
+              <p className="font-mono-num text-2xl font-bold text-black group-hover:text-white transition-colors">
                 {pkg.price}
                 {pkg.priceRange && (
                   <span className="text-black/40 group-hover:text-white/40 transition-colors">{pkg.priceRange}</span>
@@ -185,7 +185,7 @@ export function RateCard() {
                   <p className="text-xs text-black group-hover:text-white/60 uppercase tracking-widest transition-colors">{addon.note}</p>
                 </div>
               </div>
-              <p className="font-['Space_Grotesk'] font-bold text-primary group-hover:text-white whitespace-nowrap transition-colors">{addon.price}</p>
+              <p className="font-['Poppins'] font-bold text-primary group-hover:text-white whitespace-nowrap transition-colors">{addon.price}</p>
             </div>
           ))}
         </div>

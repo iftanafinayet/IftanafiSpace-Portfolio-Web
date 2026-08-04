@@ -49,7 +49,7 @@ export default function App() {
                       initial={{ y: '110%' }}
                       animate={{ y: 0 }}
                       transition={{ duration: 0.7, delay: 0.05 * i, ease: [0.33, 1, 0.68, 1] }}
-                      className="inline-block text-black font-bold tracking-tighter text-[clamp(36px,8vw,96px)] font-['Space_Grotesk'] leading-none"
+                      className="inline-block text-black font-bold tracking-tighter text-[clamp(36px,8vw,96px)] font-['Poppins'] leading-none"
                     >
                       {char === ' ' ? '\u00A0' : char}
                     </motion.span>
@@ -69,7 +69,7 @@ export default function App() {
             </div>
 
             <div className="absolute bottom-8 right-8 md:bottom-10 md:right-12 leading-none">
-              <span className="text-7xl md:text-9xl font-bold text-black/10 tabular-nums tracking-tighter font-['Space_Grotesk']">
+              <span className="text-7xl md:text-9xl font-bold text-black/10 tabular-nums tracking-tighter font-['Poppins']">
                 {progress}
               </span>
               <span className="text-2xl md:text-4xl font-bold text-black/10">%</span>
@@ -93,38 +93,40 @@ export default function App() {
       </AnimatePresence>
 
       {!loading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="relative min-h-screen w-full bg-[#fafafa] text-black"
-        >
-          <div className="relative z-10 w-full">
-            <Navbar />
-            <main>
-              <Hero />
-              <ScrollReveal>
-                <About />
-              </ScrollReveal>
-              <ScrollReveal>
-                <Experience />
-              </ScrollReveal>
-              <ScrollReveal>
-                <TechStack />
-              </ScrollReveal>
-              <ScrollReveal>
-                <Projects />
-              </ScrollReveal>
-              <ScrollReveal>
-                <RateCard />
-              </ScrollReveal>
-              <ScrollReveal>
-                <Contact />
-              </ScrollReveal>
-            </main>
-            <Footer />
-          </div>
-        </motion.div>
+        <>
+          <Navbar />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="relative min-h-screen w-full bg-[#fafafa] text-black"
+          >
+            <div className="relative z-10 w-full">
+              <main>
+                <Hero />
+                <ScrollReveal>
+                  <About />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <Experience />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <TechStack />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <Projects />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <RateCard />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <Contact />
+                </ScrollReveal>
+              </main>
+              <Footer />
+            </div>
+          </motion.div>
+        </>
       )}
     </>
   );

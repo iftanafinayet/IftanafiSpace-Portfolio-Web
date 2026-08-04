@@ -73,13 +73,15 @@ export default {
         "container-padding": "24px"
       },
       fontFamily: {
-        "headline-xl": ["Space Grotesk", "sans-serif"],
-        "label-sm": ["Space Grotesk", "sans-serif"],
-        "label-md": ["Space Grotesk", "sans-serif"],
-        "headline-lg": ["Space Grotesk", "sans-serif"],
-        "body-md": ["Inter", "sans-serif"],
-        "body-lg": ["Inter", "sans-serif"],
-        "headline-md": ["Space Grotesk", "sans-serif"]
+        "headline-xl": ["Poppins", "sans-serif"],
+        "label-sm": ["Poppins", "sans-serif"],
+        "label-md": ["Poppins", "sans-serif"],
+        "headline-lg": ["Poppins", "sans-serif"],
+        "body-md": ["Poppins", "sans-serif"],
+        "body-lg": ["Poppins", "sans-serif"],
+        "headline-md": ["Poppins", "sans-serif"],
+        "serif-italic": ["Instrument Serif", "Georgia", "serif"],
+        "mono-num": ["Geist Mono", "monospace"]
       },
       fontSize: {
         "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],

@@ -3,22 +3,22 @@ import fotoProfile from '../../assets/fotoprofile.webp';
 
 export function About() {
   return (
-    <section id="about" className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-24 py-[2.5rem] sm:py-section-gap">
+    <section id="about" className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-24 py-10 sm:py-[2.5rem] sm:py-section-gap">
       {/* Hero Section */}
-      <header className="flex flex-col md:flex-row gap-6 md:gap-section-gap items-start mb-8 md:mb-section-gap">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-6">
+      <header className="flex flex-col md:flex-row gap-8 md:gap-section-gap items-start mb-8 md:mb-section-gap">
+        <div className="flex-1 order-2 md:order-1">
+          <div className="flex items-center gap-2 mb-4 sm:mb-6">
             <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-            <span className="font-label-sm text-primary tracking-[0.3em] uppercase">About Me</span>
+            <span className="label-mono text-primary tracking-[0.3em] uppercase">About Me</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black mb-4 sm:mb-8 leading-tight">
             A Full Stack Developer <span className="text-black">Creating Elegant Solutions</span>.
           </h2>
-          <p className="text-body-lg text-black max-w-2xl leading-relaxed">
+          <p className="text-[15px] md:text-lg text-black/55 max-w-2xl leading-relaxed">
             I'm a Full Stack Developer with a passion for creating elegant solutions to complex problems. With expertise in modern web technologies, I build responsive and user-friendly applications that make a difference.
           </p>
         </div>
-        <div className="w-full md:w-[400px] aspect-square rounded-2xl overflow-hidden glass-card p-2 relative group">
+        <div className="w-full md:w-[400px] order-1 md:order-2 aspect-square rounded-2xl overflow-hidden glass-card p-2 relative group">
           <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent opacity-50"></div>
           <img
             src={fotoProfile}
@@ -30,29 +30,30 @@ export function About() {
 
       {/* Philosophy Section (Bento Grid) */}
       <section className="mb-section-gap">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-12">
-          <div className="flex flex-col gap-4 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 md:mb-12">
+          <div className="flex flex-col gap-3 sm:gap-4 max-w-2xl">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-              <span className="font-label-sm text-primary tracking-[0.3em] uppercase">Core Philosophy</span>
+              <span className="label-mono text-primary tracking-[0.3em] uppercase">Core Philosophy</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-black">
-              Principles that guide every <span className="text-black italic">build</span>.
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+              Principles that guide every <span className="accent-serif">build</span>.
             </h2>
           </div>
-          <p className="text-black/60 font-body-md max-w-sm leading-relaxed">
+          <p className="text-[15px] text-black/55 md:text-base max-w-sm leading-relaxed">
             Four pillars — from the first line of code to the final deploy — that shape how I design, build, and ship products.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-fr md:h-[640px] gap-gutter">
-          {/* Card 1 — Scalable Architecture (featured, spans 2 rows) */}
+        {/* Bento grid — stacks on mobile, grid on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-12 md:auto-rows-fr md:h-[640px] gap-4 md:gap-gutter">
+          {/* Card 1 — Scalable Architecture */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="md:col-span-7 md:row-span-2 group glass-card rounded-[2rem] overflow-hidden border-black/5 hover:bg-black transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15 p-gutter md:p-10 flex flex-col justify-between relative"
+            className="md:col-span-7 md:row-span-2 group glass-card rounded-[2rem] overflow-hidden border-black/5 hover:bg-black transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15 p-5 md:p-gutter md:p-10 flex flex-col justify-between relative min-h-[280px] md:min-h-0"
           >
             {/* Decorative dot grid (cross-fades on hover) */}
             <div className="absolute top-6 right-6 w-28 h-28 bg-[radial-gradient(circle,rgba(0,0,0,0.14)_1px,transparent_1px)] [background-size:14px_14px] opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
@@ -63,7 +64,7 @@ export function About() {
               <div className="w-14 h-14 rounded-2xl bg-black/5 border border-black/10 flex items-center justify-center group-hover:bg-white/10 group-hover:border-white/20 transition-colors">
                 <span className="material-symbols-outlined text-black text-3xl group-hover:text-white transition-colors">architecture</span>
               </div>
-              <span className="font-['Space_Grotesk'] text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors">01</span>
+              <span className="font-mono-num text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors">01</span>
             </div>
 
             <div className="relative z-10">
@@ -100,7 +101,7 @@ export function About() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="md:col-span-5 md:row-span-2 group glass-card rounded-[2rem] overflow-hidden border-black/5 hover:bg-black transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15 p-gutter md:p-8 flex flex-col relative"
           >
-            <span className="absolute top-6 right-8 font-['Space_Grotesk'] text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors">02</span>
+            <span className="absolute top-6 right-8 font-mono-num text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors">02</span>
 
             <div className="flex-1 flex flex-col items-center justify-center text-center py-6">
               <div className="relative mb-6">
@@ -139,7 +140,7 @@ export function About() {
                 </p>
               </div>
             </div>
-            <span className="font-['Space_Grotesk'] text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors shrink-0">03</span>
+            <span className="font-mono-num text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors shrink-0">03</span>
           </motion.div>
 
           {/* Card 4 — Continuous Deployment (wide) */}
@@ -157,7 +158,7 @@ export function About() {
               <div className="min-w-0">
                 <div className="flex items-center gap-3 mb-1">
                   <h3 className="font-headline-md text-black group-hover:text-white transition-colors">Continuous Deployment</h3>
-                  <span className="font-['Space_Grotesk'] text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors hidden sm:block">04</span>
+                  <span className="font-mono-num text-sm font-bold text-black/30 group-hover:text-white/40 transition-colors hidden sm:block">04</span>
                 </div>
                 <p className="text-black font-body-md group-hover:text-white/80 transition-colors">
                   Deployment is just the beginning. I refine systems through constant testing and real-world feedback loops.

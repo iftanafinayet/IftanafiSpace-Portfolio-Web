@@ -4,12 +4,15 @@
 
 @layer base {
   body {
-    @apply bg-[#fafafa] text-[#1a1a1a] antialiased overflow-x-hidden;
-    font-family: 'Inter', sans-serif;
+    @apply bg-[#fafafa] text-[#1a1a1a] antialiased;
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 }
 
@@ -17,15 +20,46 @@
   .glass-card {
     @apply bg-white/70 backdrop-blur-[12px] border border-black/[0.08] shadow-[0_2px_16px_rgba(0,0,0,0.04)];
   }
-  .glow-hover:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+
+  .label-mono {
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.6875rem;
+    line-height: 1;
+    font-weight: 500;
   }
-  .neon-border {
-    border: 1px solid rgba(0, 0, 0, 0.25);
+
+  .accent-serif {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .safe-bottom {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
   }
 }
 
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 64px;
   scroll-behavior: smooth;
+}
+
+/* Mobile-first responsive defaults */
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
 }

@@ -4,6 +4,7 @@ import tegalEatsImg from '../../assets/TegalEats.webp';
 import dompetGuaImg from '../../assets/DompetGua.webp';
 import smartGroceriesImg from '../../assets/SmartGroceries.webp';
 import rumahBalonTegalImg from '../../assets/RumahBalon.webp';
+import seapediaImg from '../../assets/seapedia.png';
 
 interface Project {
   title: string;
@@ -72,6 +73,15 @@ export function Projects() {
       image: rumahBalonTegalImg,
       live: 'https://rumahbalontgl.vercel.app/',
       size: 'wide'
+    },
+    {
+      title: 'SEAPEDIA',
+      category: 'E-Commerce • 2026',
+      description: 'E-commerce multirole platform.',
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Express.js', 'Postgree', 'Neon'],
+      image: seapediaImg,
+      live: 'https://seapedia-frontend-three.vercel.app/',
+      size: 'wide'
     }
   ];
 
@@ -83,19 +93,19 @@ export function Projects() {
   };
 
   return (
-    <section id="work" className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-24 py-16 md:py-24">
-      <header className="mb-10 md:mb-16">
-        <div className="flex flex-col gap-4 max-w-3xl">
+    <section id="work" className="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-24 py-10 sm:py-16 md:py-24">
+      <header className="mb-8 sm:mb-10 md:mb-16">
+        <div className="flex flex-col gap-3 sm:gap-4 max-w-3xl">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-            <span className="font-label-sm text-primary tracking-[0.3em] uppercase">
+            <span className="label-mono text-primary tracking-[0.3em] uppercase">
               Featured Projects
             </span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight">
-            Engineering digital <span className="text-black italic">experiences</span> that scale.
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-black leading-tight">
+            Engineering digital <span className="accent-serif">experiences</span> that scale.
           </h2>
-          <p className="font-body-md text-black max-w-lg leading-relaxed">
+          <p className="text-[15px] text-black/55 md:text-base max-w-lg leading-relaxed">
             A curated selection of products, platforms, and experiences I've engineered from
             concept to deployment.
           </p>
@@ -111,9 +121,8 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: index * 0.06 }}
-            className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-black/5 glass-card hover:bg-black transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15 ${
-              sizeClasses[project.size]
-            }`}
+            className={`group relative flex flex-col overflow-hidden rounded-[2rem] border border-black/5 glass-card hover:bg-black transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/15 ${sizeClasses[project.size]
+              }`}
           >
             {/* Image fills the whole card */}
             <div className="absolute inset-0 overflow-hidden">
@@ -123,11 +132,11 @@ export function Projects() {
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0 group-hover:opacity-30 opacity-90"
               />
               {/* Dark overlay that strengthens on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent group-hover:from-black/95 group-hover:via-black/70 group-hover:to-black/40 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/95 group-hover:via-black/70 group-hover:to-black/40 transition-all duration-500"></div>
             </div>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col justify-end h-full min-h-[320px] md:min-h-[360px] p-6 md:p-7">
+            <div className="relative z-10 flex flex-col justify-end h-full min-h-[300px] md:min-h-[360px] p-5 sm:p-6 md:p-7">
               {/* Top row: category + live link (always visible) */}
               <div className="flex items-start justify-between mb-auto">
                 <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[10px] font-bold tracking-widest text-white uppercase">
@@ -146,17 +155,17 @@ export function Projects() {
 
               {/* Bottom content */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">
                   {project.title}
                 </h3>
-                <p className="font-body-md text-white/80 text-sm mb-5 line-clamp-3 md:line-clamp-none leading-relaxed">
+                <p className="font-body-md text-white/80 text-sm mb-4 md:mb-5 line-clamp-3 md:line-clamp-none leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((t, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 rounded-md text-[10px] font-medium bg-white/10 backdrop-blur-sm border border-white/15 text-white/90 uppercase tracking-tight"
+                      className="px-2.5 py-1 rounded-md text-[10px] font-medium bg-white/10 backdrop-blur-sm border border-white/15 text-white/90 uppercase tracking-tight"
                     >
                       {t}
                     </span>
@@ -169,26 +178,26 @@ export function Projects() {
       </div>
 
       {/* Mini CTA */}
-      <section className="mt-16 md:mt-24">
-        <div className="glass-card rounded-3xl p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 border-primary/10">
+      <section className="mt-12 sm:mt-16 md:mt-24">
+        <div className="glass-card rounded-[1.5rem] sm:rounded-3xl p-5 sm:p-6 md:p-16 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 border-primary/10">
           <div className="max-w-xl text-center lg:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Interested in <span className="text-primary italic">collaborating</span>?
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-black mb-3 sm:mb-4">
+              Interested in <span className="accent-serif">collaborating</span>?
             </h2>
-            <p className="font-body-md text-black">
+            <p className="text-[15px] text-black/55 md:text-base leading-relaxed">
               I'm always looking for new challenges and interesting projects to work on.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
             <a
               href="#contact"
-              className="bg-black text-white border border-black px-8 py-3.5 rounded-xl font-label-md hover:bg-white hover:text-black transition-all duration-300 ease-out active:scale-95 text-center"
+              className="bg-black text-white border border-black px-8 py-3.5 rounded-xl font-label-md hover:bg-white hover:text-black transition-all duration-300 ease-out active:scale-95 text-center touch-target"
             >
               LET'S TALK
             </a>
             <a
               href="/assets/NayetIftanafi_Resume.pdf"
-              className="glass-card px-8 py-3.5 rounded-xl font-label-md text-black border border-black/10 hover:bg-black hover:text-white transition-all duration-300 ease-out active:scale-95 text-center"
+              className="glass-card px-8 py-3.5 rounded-xl font-label-md text-black border border-black/10 hover:bg-black hover:text-white transition-all duration-300 ease-out active:scale-95 text-center touch-target"
             >
               VIEW RESUME
             </a>
