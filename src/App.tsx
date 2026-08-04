@@ -16,13 +16,13 @@ export default function App() {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => setLoading(false), 600);
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) return 100;
-        return prev + 1;
+        return prev + 2;
       });
-    }, 20);
+    }, 10);
 
     return () => {
       clearTimeout(timer);
@@ -37,7 +37,7 @@ export default function App() {
           <motion.div
             key="loader"
             initial={{ opacity: 1 }}
-            exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
+            exit={{ y: '-100%', transition: { duration: 0.45, ease: [0.76, 0, 0.24, 1] } }}
             className="fixed inset-0 bg-[#fafafa] z-[999] overflow-hidden"
           >
             <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
@@ -98,7 +98,7 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0.5 }}
             className="relative min-h-screen w-full bg-[#fafafa] text-black"
           >
             <div className="relative z-10 w-full">
