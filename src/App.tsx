@@ -39,7 +39,7 @@ export default function App() {
           <motion.div
             key="loader"
             initial={{ opacity: 1 }}
-            exit={{ y: '-100%', transition: { duration: 0.45, ease: [0.76, 0, 0.24, 1] } }}
+            exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
             className="fixed inset-0 bg-[#fafafa] z-[999] overflow-hidden"
           >
             <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
@@ -98,9 +98,9 @@ export default function App() {
         <>
           <Navbar />
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.33, 1, 0.68, 1] }}
             className="relative min-h-screen w-full bg-[#fafafa] text-black"
           >
             <div className="relative z-10 w-full">
