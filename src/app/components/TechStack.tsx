@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import React from 'react';
 
 export function TechStack() {
+  const [hoveredRow, setHoveredRow] = React.useState<null | number>(null);
+
   const categories = [
     {
       label: 'Frontend',
@@ -46,7 +49,11 @@ export function TechStack() {
       {/* Single Marquee Row — mobile */}
       <div className="relative flex flex-col gap-4 sm:gap-5 md:gap-8">
         {/* Row 1: Moving Right */}
-        <div className="flex overflow-hidden select-none">
+        <div
+          className="flex overflow-hidden select-none"
+          onMouseEnter={() => setHoveredRow(0)}
+          onMouseLeave={() => setHoveredRow(null)}
+        >
           <motion.div
             className="flex flex-nowrap w-max"
             animate={{ x: ['0%', '-50%'] }}
@@ -54,7 +61,7 @@ export function TechStack() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: hoveredRow === 0 ? 90 : 30,
                 ease: "linear",
               }
             }}
@@ -72,7 +79,11 @@ export function TechStack() {
         </div>
 
         {/* Row 2: Moving Left */}
-        <div className="flex overflow-hidden select-none">
+        <div
+          className="flex overflow-hidden select-none"
+          onMouseEnter={() => setHoveredRow(1)}
+          onMouseLeave={() => setHoveredRow(null)}
+        >
           <motion.div
             className="flex flex-nowrap w-max"
             animate={{ x: ['-50%', '0%'] }}
@@ -80,7 +91,7 @@ export function TechStack() {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 36,
+                duration: hoveredRow === 1 ? 108 : 36,
                 ease: "linear",
               }
             }}

@@ -65,11 +65,10 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled || menuOpen
-          ? 'bg-white/90 border-b border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.06)]'
-          : 'bg-transparent border-b border-transparent'
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled || menuOpen
+        ? 'bg-white/90 border-b border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.06)]'
+        : 'bg-transparent border-b border-transparent'
+        }`}
     >
       <div className="flex justify-between items-center h-14 sm:h-16 md:h-20 px-5 sm:px-8 lg:px-12 max-w-[1440px] mx-auto">
         {/* Logo */}
@@ -111,9 +110,7 @@ export function Navbar() {
                 <span
                   className={`text-[9px] font-semibold ${activeSection === link.id ? 'text-white/50' : 'text-black/30'
                     }`}
-                >
-                  0{i + 1}
-                </span>
+                >                </span>
                 {link.name}
               </span>
             </a>

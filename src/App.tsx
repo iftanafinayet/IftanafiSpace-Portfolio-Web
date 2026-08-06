@@ -16,16 +16,18 @@ export default function App() {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 600);
     const interval = setInterval(() => {
       setProgress(prev => {
-        if (prev >= 100) return 100;
-        return prev + 2;
+        if (prev >= 100) {
+          clearInterval(interval);
+          setTimeout(() => setLoading(false), 400);
+          return 100;
+        }
+        return prev + 1;
       });
-    }, 10);
+    }, 18);
 
     return () => {
-      clearTimeout(timer);
       clearInterval(interval);
     };
   }, []);
