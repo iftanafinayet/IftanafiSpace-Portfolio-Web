@@ -5,6 +5,7 @@ import dompetGuaImg from '../../assets/DompetGua.webp';
 import smartGroceriesImg from '../../assets/SmartGroceries.webp';
 import rumahBalonTegalImg from '../../assets/RumahBalon.webp';
 import seapediaImg from '../../assets/seapedia.png';
+import nesaasImg from '../../assets/nesaas.webp';
 
 interface Project {
   title: string;
@@ -71,7 +72,7 @@ export function Projects() {
       description: 'Landing page for Rumah Balon Tegal, a balloon decoration service in Tegal.',
       tech: ['React', 'Tailwind CSS'],
       image: rumahBalonTegalImg,
-      live: 'https://rumahbalontgl.vercel.app/',
+      live: 'https://rumahbalontgl-3r1l.vercel.app',
       size: 'wide'
     },
     {
@@ -81,6 +82,15 @@ export function Projects() {
       tech: ['React', 'TypeScript', 'Tailwind CSS', 'Express.js', 'Postgree', 'Neon'],
       image: seapediaImg,
       live: 'https://seapedia-frontend-three.vercel.app/',
+      size: 'standard'
+    },
+    {
+      title: 'NESAAS',
+      category: 'POS SaaS Subscription',
+      description: 'NESAAS is a POS SaaS subscription platform for small businesses.',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Neon', 'Postgres'],
+      image: nesaasImg,
+      live: 'https://nesaas.vercel.app/',
       size: 'wide'
     }
   ];

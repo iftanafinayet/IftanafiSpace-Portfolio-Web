@@ -53,6 +53,32 @@ export const Experience = () => {
         'Collaborate with the design team to create innovative packaging designs'
       ],
       tags: ['Sales', 'Marketing', 'Business Development']
+    },
+    {
+      year: '2026',
+      title: 'System Analyst',
+      company: 'PT. Amanah Karya Indonesia',
+      location: 'Depok, Indonesia',
+      description: 'Responsible for making Test Cases and User Manual for the company\'s software',
+      achievements: [
+        'Make a Test Cases and User Manual for the company\'s software',
+        'Make an Automation Testing using Playwright and Chromium',
+        'Make an User Acceptance Testing Document'
+      ],
+      tags: ['System Analyst', 'Test Cases', 'User Manual', 'Automation Testing', 'User Acceptance Testing']
+    },
+    {
+      year: '2026',
+      title: 'Web Developer',
+      company: 'CSS FTUI',
+      location: 'Depok, Indonesia',
+      description: 'Responsible for developing the CSS FTUI realtime voting using supabase and nextjs',
+      achievements: [
+        'Develop a realtime voting system using supabase and nextjs',
+        'Make an responsive design for the website',
+        'Make an realtime dashboard for the website'
+      ],
+      tags: ['Web Developer', 'Responsive Design', 'Realtime Dashboard']
     }
   ];
 
